@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Nanami Kento</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2023-12-26T07:54:37.265Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>Nanami Kento</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2023/12/26/Blog%E7%BB%93%E5%90%88GitHub%20Page%E9%83%A8%E7%BD%B2/"/>
+    <id>http://example.com/2023/12/26/Blog%E7%BB%93%E5%90%88GitHub%20Page%E9%83%A8%E7%BD%B2/</id>
+    <published>2023-12-26T07:48:42.256Z</published>
+    <updated>2023-12-26T07:54:37.265Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h2><p>这一步的作用主要是让自己的博客有一个远程仓库可以推送代码</p><ol><li><p>打开github，登录自己的账号，并新建一个代码仓库</p><p><img src="https://s2.loli.net/2023/12/26/G7whFz6BXATlIij.png" alt="image-20231226155101500"></p></li><li><p>填写自己想要的仓库名并创建</p><p><img src="https://s2.loli.net/2023/12/26/ICQf1bKejLskUTB.png" alt="image-20231226155314153"></p></li></ol><h2 id="使用GitHub-Page"><a href="#使用GitHub-Page" class="headerlink" title="使用GitHub Page"></a>使用GitHub Page</h2><ol><li>进入自己的代码仓库里面</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;新建仓库&quot;&gt;&lt;a href=&quot;#新建仓库&quot; class=&quot;headerlink&quot; title=&quot;新建仓库&quot;&gt;&lt;/a&gt;新建仓库&lt;/h2&gt;&lt;p&gt;这一步的作用主要是让自己的博客有一个远程仓库可以推送代码&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;打开github，登录自己的账号，</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Blog搭建过程(二) 魔改</title>
+    <link href="http://example.com/2023/12/07/Blog%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B%E4%BA%8C/"/>
+    <id>http://example.com/2023/12/07/Blog%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B%E4%BA%8C/</id>
+    <published>2023-12-07T07:24:24.000Z</published>
+    <updated>2023-12-07T07:24:24.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="基础的搭建"><a href="#基础的搭建" class="headerlink" title="基础的搭建"></a>基础的搭建</h1><p>本站的一些基础搭建参考<code>Jerry</code>的基础教程</p><ol><li><a href="https://butterfly.js.org/posts/dc584b87/">Butterfly 安裝文檔(二) 主題頁面 | Butterfly</a></li><li><a href="https://butterfly.js.org/posts/4aa8abbe/">Butterfly 安裝文檔(三) 主題配置-1 | Butterfly</a></li><li><a href="https://butterfly.js.org/posts/ceeb73f/">Butterfly 安裝文檔(四) 主題配置-2 | Butterfly</a></li></ol><p>然后基础的信息搭建好了，现在开始参考网上其他魔改大佬的教程</p><h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ol><li>在博客根目录下的<code>source</code>文件夹下新建<code>js</code>、<code>css</code>、<code>img</code>三个文件夹</li><li>在 <code>_config.butterfly.yml</code>文件下面的<code>inject</code>选项里面添加你新建的各种<code>js</code>，<code>css</code></li></ol><h1 id="各种魔改第一期"><a href="#各种魔改第一期" class="headerlink" title="各种魔改第一期"></a>各种魔改第一期</h1><h3 id="网站特殊日子置灰"><a href="#网站特殊日子置灰" class="headerlink" title="网站特殊日子置灰"></a>网站特殊日子置灰</h3><ol><li><p>在js文件夹下面新建<code>grayscale.js</code>文件</p><p><img src="https://s2.loli.net/2023/12/07/khKptiDuTXSHG3c.png" alt="image-20231207154811805"></p></li><li><p><code>inject</code>到<code>hexo</code>里面（该步骤后续不再赘述）</p><p><img src="https://s2.loli.net/2023/12/07/TEicaKPB2R81qAs.png" alt="image-20231207154633197"></p></li><li><p>编写<code>grayscale.js</code>代码</p></li></ol>   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @Description: 网站置灰</span></span><br><span class="line"><span class="comment"> * @Author: 5t5</span></span><br><span class="line"><span class="comment"> * @Time: 2023/12/7 15:37</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">PublicSacrificeDay</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 你想要置灰的特殊日子的日期</span></span><br><span class="line">  <span class="keyword">let</span> <span class="title class_">PSFarr</span> = [<span class="string">&quot;0403&quot;</span>, <span class="string">&quot;0512&quot;</span>, <span class="string">&quot;0707&quot;</span>, <span class="string">&quot;0918&quot;</span>, <span class="string">&quot;0930&quot;</span>, <span class="string">&quot;1213&quot;</span>];</span><br><span class="line">  <span class="keyword">let</span> currentDate = <span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line">  <span class="keyword">let</span> mm = currentDate.<span class="title function_">getMonth</span>() + <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">let</span> dd = currentDate.<span class="title function_">getDate</span>();</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">let</span> str = <span class="string">`<span class="subst">$&#123;mm &lt; <span class="number">10</span> ? <span class="string">&#x27;0&#x27;</span> : <span class="string">&#x27;&#x27;</span>&#125;</span><span class="subst">$&#123;mm&#125;</span><span class="subst">$&#123;dd &lt; <span class="number">10</span> ? <span class="string">&#x27;0&#x27;</span> : <span class="string">&#x27;&#x27;</span>&#125;</span><span class="subst">$&#123;dd&#125;</span>`</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> <span class="title class_">PSFarr</span>.<span class="title function_">includes</span>(str) ? <span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">setGrayStyle</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">document</span>.<span class="title function_">getElementsByTagName</span>(<span class="string">&quot;html&quot;</span>)[<span class="number">0</span>].<span class="title function_">setAttribute</span>(</span><br><span class="line">    <span class="string">&quot;style&quot;</span>,</span><br><span class="line">    <span class="string">&quot;filter: gray !important; filter: grayscale(100%); -webkit-filter: grayscale(100%); -moz-filter: grayscale(100%); -ms-filter: grayscale(100%); -o-filter: grayscale(100%);&quot;</span></span><br><span class="line">  )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="title class_">PublicSacrificeDay</span>()) &#123;</span><br><span class="line">  <span class="title function_">setGrayStyle</span>()</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;基础的搭建&quot;&gt;&lt;a href=&quot;#基础的搭建&quot; class=&quot;headerlink&quot; title=&quot;基础的搭建&quot;&gt;&lt;/a&gt;基础的搭建&lt;/h1&gt;&lt;p&gt;本站的一些基础搭建参考&lt;code&gt;Jerry&lt;/code&gt;的基础教程&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;h</summary>
+      
+    
+    
+    
+    <category term="教程" scheme="http://example.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="博客" scheme="http://example.com/categories/%E6%95%99%E7%A8%8B/%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="Blog" scheme="http://example.com/categories/%E6%95%99%E7%A8%8B/%E5%8D%9A%E5%AE%A2/Blog/"/>
+    
+    <category term="魔改" scheme="http://example.com/categories/%E6%95%99%E7%A8%8B/%E5%8D%9A%E5%AE%A2/Blog/%E9%AD%94%E6%94%B9/"/>
+    
+    
+    <category term="建站" scheme="http://example.com/tags/%E5%BB%BA%E7%AB%99/"/>
+    
+    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
+    
+    <category term="Butterfly" scheme="http://example.com/tags/Butterfly/"/>
+    
+    <category term="魔改" scheme="http://example.com/tags/%E9%AD%94%E6%94%B9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Blog搭建过程(一) 建立项目</title>
+    <link href="http://example.com/2023/12/06/Blog%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B%E4%B8%80/"/>
+    <id>http://example.com/2023/12/06/Blog%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B%E4%B8%80/</id>
+    <published>2023-12-06T09:55:55.000Z</published>
+    <updated>2023-12-06T09:55:55.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Hexo起步"><a href="#Hexo起步" class="headerlink" title="Hexo起步"></a>Hexo起步</h1><ol><li><p>首先，你需要起一个项目，新建博客的文件夹作为根目录</p></li><li><p>然后采用编辑器的终端进行命令行输入</p></li><li><p>安装项目</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https://registry.npmmirror.com</span><br><span class="line"><span class="comment">#将npm源替换为阿里的镜像。之后的安装就会迅速很多了。</span></span><br><span class="line"></span><br><span class="line">npm install hexo-cli -g</span><br><span class="line"><span class="comment"># hexo-cli 是 hexo的指令集。</span></span><br><span class="line"></span><br><span class="line">hexo init</span><br><span class="line"><span class="comment"># 有了指令集以后，使用它的初始化指令来初始化安装Hexo博客。</span></span><br></pre></td></tr></table></figure></li><li><p>安装插件</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-stylus --save</span><br><span class="line"><span class="comment"># nib css支持插件，如无需求，可跳过</span></span><br><span class="line"></span><br><span class="line">npm install hexo-generator-feed --save</span><br><span class="line"><span class="comment"># RSS订阅支持插件，如无需求，可跳过</span></span><br><span class="line"></span><br><span class="line">npm install hexo-generator-sitemap --save</span><br><span class="line"><span class="comment"># sitemap生成插件，帮助搜索引擎抓取，如无需求，可跳过</span></span><br><span class="line"></span><br><span class="line">npm install hexo-admin --save</span><br><span class="line"><span class="comment"># 网页端hexo文档管理插件，如无需求，可跳过</span></span><br><span class="line"></span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line"><span class="comment"># git部署插件，必须安装</span></span><br></pre></td></tr></table></figure></li><li><p>常用命令</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line"><span class="comment">#清空缓存</span></span><br><span class="line"></span><br><span class="line">hexo generate</span><br><span class="line">hexo g <span class="comment">#简写</span></span><br><span class="line"><span class="comment">#重新编译</span></span><br><span class="line"></span><br><span class="line">hexo server</span><br><span class="line">hexo s <span class="comment">#简写</span></span><br><span class="line"><span class="comment">#打开本地访问</span></span><br><span class="line"></span><br><span class="line">hexo new &lt;layout&gt; <span class="string">&quot;文章title&quot;</span></span><br><span class="line"><span class="comment">#新建文章</span></span><br><span class="line"></span><br><span class="line">hexo deploy</span><br><span class="line">hexo d <span class="comment">#简写</span></span><br><span class="line"><span class="comment">#部署到云端</span></span><br></pre></td></tr></table></figure></li><li><p>本地预览</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure><p>终端跑了之后就会出现</p><p><img src="https://s2.loli.net/2023/12/06/RpX3qE1TfAHdBIy.png" alt="image-20231206151517155"></p><p>打开浏览器之后，在搜索框里面输入这个 <a href="http://localhost:4000/">http://localhost:4000/</a> 就可以预览</p><p><img src="https://s2.loli.net/2023/12/06/f1vqxRX86BIaHyr.png" alt="image-20231206151909257"></p></li></ol><h1 id="选择主题"><a href="#选择主题" class="headerlink" title="选择主题"></a>选择主题</h1><p>这里选择的主题是<code>butterfly</code>，<a href="https://butterfly.js.org/">官网</a>在这里</p><ol><li><p>安装主题</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b dev https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure><p>运行这个命令，下载项目下来，这里安装的是开发分支的项目，可以体验更多的东西，但是bug比较多，看个人选择</p></li><li><p>应用主题</p><p>修改 <code>Hexo</code> 根目錄下的 <code>_config.yml</code>，把主題改為 <code>butterfly</code></p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">butterfly</span></span><br></pre></td></tr></table></figure></li><li><p>安装插件</p><p>这里按照官方教程安装插件</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-pug hexo-renderer-stylus --save</span><br></pre></td></tr></table></figure></li><li><p>复制<code>_config.yml</code></p><p>在 <code>hexo</code> 的根目錄創建一個文件 <code>_config.butterfly.yml</code>，並把主題目錄的 <code>_config.yml</code> 內容複製到 <code>_config.butterfly.yml</code> 去。( 注意: 複製的是主題的 <code>_config.yml</code> ，而不是 <code>hexo</code> 的 <code>_config.yml</code>)</p><p>注意： 不要把主題目錄的 <code>_config.yml</code> 刪掉</p><p>注意： 以後只需要在 <code>_config.butterfly.yml</code> 進行配置就行。如果使用了 <code>_config.butterfly.yml</code>， 配置主題的 <code>_config.yml</code> 將不會有效果。</p></li><li><p>运行 <code>hexo server</code></p></li></ol><p>参考教程</p><p>1、<a href="https://butterfly.js.org/posts/21cfbf15">Butterfly 安裝文檔(一) 快速開始 | Butterfly</a></p><p>2、<a href="https://akilar.top/posts/6ef63e2d/">Win10:Hexo+github搭建个人博客 | Akilarの糖果屋</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Hexo起步&quot;&gt;&lt;a href=&quot;#Hexo起步&quot; class=&quot;headerlink&quot; title=&quot;Hexo起步&quot;&gt;&lt;/a&gt;Hexo起步&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;首先，你需要起一个项目，新建博客的文件夹作为根目录&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;然后</summary>
+      
+    
+    
+    
+    <category term="教程" scheme="http://example.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="博客" scheme="http://example.com/categories/%E6%95%99%E7%A8%8B/%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="Blog" scheme="http://example.com/categories/%E6%95%99%E7%A8%8B/%E5%8D%9A%E5%AE%A2/Blog/"/>
+    
+    
+    <category term="建站" scheme="http://example.com/tags/%E5%BB%BA%E7%AB%99/"/>
+    
+    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
+    
+    <category term="Butterfly" scheme="http://example.com/tags/Butterfly/"/>
+    
+  </entry>
+  
+</feed>
