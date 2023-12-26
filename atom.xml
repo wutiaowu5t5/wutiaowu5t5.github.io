@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-12-26T07:54:37.265Z</updated>
+  <updated>2023-12-26T08:58:48.350Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,16 +21,16 @@
     <link href="http://example.com/2023/12/26/Blog%E7%BB%93%E5%90%88GitHub%20Page%E9%83%A8%E7%BD%B2/"/>
     <id>http://example.com/2023/12/26/Blog%E7%BB%93%E5%90%88GitHub%20Page%E9%83%A8%E7%BD%B2/</id>
     <published>2023-12-26T07:48:42.256Z</published>
-    <updated>2023-12-26T07:54:37.265Z</updated>
+    <updated>2023-12-26T08:58:48.350Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h2><p>这一步的作用主要是让自己的博客有一个远程仓库可以推送代码</p><ol><li><p>打开github，登录自己的账号，并新建一个代码仓库</p><p><img src="https://s2.loli.net/2023/12/26/G7whFz6BXATlIij.png" alt="image-20231226155101500"></p></li><li><p>填写自己想要的仓库名并创建</p><p><img src="https://s2.loli.net/2023/12/26/ICQf1bKejLskUTB.png" alt="image-20231226155314153"></p></li></ol><h2 id="使用GitHub-Page"><a href="#使用GitHub-Page" class="headerlink" title="使用GitHub Page"></a>使用GitHub Page</h2><ol><li>进入自己的代码仓库里面</li></ol>]]></content>
+    <content type="html"><![CDATA[<h2 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h2><p>这一步的作用主要是让自己的博客有一个远程仓库可以推送代码</p><ol><li><p>打开<code>github</code>，登录自己的账号，并新建一个代码仓库</p><p><img src="https://s2.loli.net/2023/12/26/G7whFz6BXATlIij.png" alt="image-20231226155101500"></p></li><li><p>填写仓库名并创建，一定要勾选<code>Add README</code></p><p>仓库名有严格的格式，一定要按照格式来，否则无法生成自己的页面，格式：<code>&lt;username&gt;.github.io</code></p><p><img src="https://s2.loli.net/2023/12/26/8Va65TQjrxyd9NF.png" alt="image-20231226155654294"></p></li></ol><h2 id="设置部署仓库"><a href="#设置部署仓库" class="headerlink" title="设置部署仓库"></a>设置部署仓库</h2><ol><li><p>进入代码内，打开<code>_config.yml</code><br>在最后一行内设置自己的<code>deploy</code>，<code>repo</code>的设置根据自己仓库里面的<code>SSH</code>来</p><p><img src="https://s2.loli.net/2023/12/26/6F5BPyDg1xsrYMv.png" alt="image-20231226162840853"></p><p><img src="https://s2.loli.net/2023/12/26/YXAJjBS8WCpRQZM.png" alt="image-20231226162743654"></p></li><li><p>配置SSH</p><p>因为是用ssh连接，所以需要配置一下<code>ssh key</code></p><ol><li><p>打开<code>Git Bash</code></p></li><li><p>输入  <code>cd ~/.ssh</code>检测一下本地有没有<code>ssh</code>文件，如果有的话可以直接跳到</p></li><li><p>没有的话需要创建<code>ssh key</code></p><p>运行<code>ssh-keygen -t rsa -C &quot;your_email@example.com&quot;</code>，后面的邮箱是你的<code>github</code>绑定的邮箱</p><p>运行完一直回车就可以</p></li><li><p>将创建好的<code>key</code>添加到<code>github</code></p><ul><li><p>拷贝 id_rsa.pub 文件的内容，你可以用编辑器打开文件复制，也可以用git命令复制该文件的内容</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clip &lt; ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure><p>Window 使用 clip 命令复制，Mac 则使用 pbcopy 命令</p></li><li><p>打开你的<code>github</code>账户的设置，找到里面的<code>ssh and GPG keys</code>选项，点击<code>NEW  SSH Key</code>，粘贴并保存</p></li></ul></li><li><p>测试是否添加成功并可连接</p><p>在<code>bash</code>输入</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure><p>出现以下内容就是成功</p><p><img src="https://s2.loli.net/2023/12/26/YGa5nVdmcIBgzhA.png" alt="image-20231226165627123"></p></li></ol></li></ol>]]></content>
     
     
       
       
     <summary type="html">&lt;h2 id=&quot;新建仓库&quot;&gt;&lt;a href=&quot;#新建仓库&quot; class=&quot;headerlink&quot; title=&quot;新建仓库&quot;&gt;&lt;/a&gt;新建仓库&lt;/h2&gt;&lt;p&gt;这一步的作用主要是让自己的博客有一个远程仓库可以推送代码&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;打开github，登录自己的账号，</summary>
+&lt;li&gt;&lt;p&gt;打开&lt;code&gt;github&lt;/c</summary>
       
     
     
