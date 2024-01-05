@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://wutiaowu5t5.github.io/about/index.html</loc>
+    
+    <lastmod>2024-01-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wutiaowu5t5.github.io/posts/7ca07026/</loc>
+    
+    <lastmod>2024-01-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://wutiaowu5t5.github.io/posts/7ca07026/</loc>
     
     <lastmod>2024-01-05</lastmod>
@@ -154,15 +172,6 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>https://wutiaowu5t5.github.io/about/index.html</loc>
-    
-    <lastmod>2023-12-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   <url>
     <loc>https://wutiaowu5t5.github.io/</loc>
@@ -171,13 +180,6 @@
     <priority>1.0</priority>
   </url>
 
-  
-  <url>
-    <loc>https://wutiaowu5t5.github.io/tags/%E5%BB%BA%E7%AB%99/</loc>
-    <lastmod>2024-01-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
   
   <url>
     <loc>https://wutiaowu5t5.github.io/tags/Butterfly/</loc>
@@ -194,7 +196,14 @@
   </url>
   
   <url>
-    <loc>https://wutiaowu5t5.github.io/tags/%E9%AD%94%E6%94%B9/</loc>
+    <loc>https://wutiaowu5t5.github.io/tags/%E5%BB%BA%E7%AB%99/</loc>
+    <lastmod>2024-01-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wutiaowu5t5.github.io/tags/%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2024-01-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -203,21 +212,21 @@
 
   
   <url>
-    <loc>https://wutiaowu5t5.github.io/categories/%E6%95%99%E7%A8%8B/</loc>
+    <loc>https://wutiaowu5t5.github.io/categories/%E9%83%A8%E7%BD%B2/</loc>
     <lastmod>2024-01-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://wutiaowu5t5.github.io/categories/%E6%95%99%E7%A8%8B/%E9%AD%94%E6%94%B9/</loc>
+    <loc>https://wutiaowu5t5.github.io/categories/%E6%90%AD%E5%BB%BA/</loc>
     <lastmod>2024-01-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://wutiaowu5t5.github.io/categories/%E6%95%99%E7%A8%8B/%E9%83%A8%E7%BD%B2/</loc>
+    <loc>https://wutiaowu5t5.github.io/categories/%E9%AD%94%E6%94%B9/</loc>
     <lastmod>2024-01-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
