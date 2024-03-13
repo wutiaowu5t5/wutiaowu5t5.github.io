@@ -1,0 +1,7 @@
+/* 自定义字体引入 */
+@font-face{
+    font-family: 'sanctum' ;  /* 字体名自定义即可 */
+    src: url('/font/book.ttf');
+    font-display: swap;
+}
+

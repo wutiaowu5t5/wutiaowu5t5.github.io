@@ -1,0 +1,17 @@
+svg.icon {
+    width: 1em;
+    height: 1em;
+    /* width和height定义图标的默认宽度和高度*/
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+.post-content .note > p {
+    display: flex;
+    align-items: center;
+}
+
+.post-content .note > p > svg {
+    margin-right: 0.5em;
+}

@@ -1,0 +1,24 @@
+/* 去除导航栏选项中底下的蓝条 */
+#nav *::after{
+    background-color: transparent !important;
+}
+
+/* 导航栏菜单鼠标移入字体放大 */
+#nav #site-name:hover,
+#nav .menus_item:hover,
+#nav #search-button:hover{
+    transform: scale(1.3);
+}
+
+#nav #site-name,
+#nav .menus_item,
+#nav #search-button{
+    transition: transform 0.3s ease;
+}
+
+#nav .menus_item {
+    margin-right: 1em;
+}
+#nav .menus_item:last-child {
+    margin-right: 0;
+}
