@@ -17,47 +17,28 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Javascript设计模式 - 《中介者模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/957fddbf/"/>
-    <id>https://wutiaowu5t5.github.io/posts/957fddbf/</id>
-    <published>2024-04-08T07:24:24.000Z</published>
-    <updated>2024-04-08T07:24:24.000Z</updated>
-    
-    
-    
-    
-    <category term="web" scheme="https://wutiaowu5t5.github.io/categories/web/"/>
-    
-    
-    <category term="javascript" scheme="https://wutiaowu5t5.github.io/tags/javascript/"/>
-    
-    <category term="设计模式" scheme="https://wutiaowu5t5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Javascript设计模式 - 《代理模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/54233691/"/>
-    <id>https://wutiaowu5t5.github.io/posts/54233691/</id>
-    <published>2024-04-08T07:24:24.000Z</published>
-    <updated>2024-04-08T07:24:24.000Z</updated>
-    
-    
-    
-    
-    <category term="web" scheme="https://wutiaowu5t5.github.io/categories/web/"/>
-    
-    
-    <category term="javascript" scheme="https://wutiaowu5t5.github.io/tags/javascript/"/>
-    
-    <category term="设计模式" scheme="https://wutiaowu5t5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Javascript设计模式 - 《享元模式》</title>
     <link href="https://wutiaowu5t5.github.io/posts/469c39d8/"/>
     <id>https://wutiaowu5t5.github.io/posts/469c39d8/</id>
+    <published>2024-04-08T07:24:24.000Z</published>
+    <updated>2024-04-08T07:24:24.000Z</updated>
+    
+    
+    
+    
+    <category term="web" scheme="https://wutiaowu5t5.github.io/categories/web/"/>
+    
+    
+    <category term="javascript" scheme="https://wutiaowu5t5.github.io/tags/javascript/"/>
+    
+    <category term="设计模式" scheme="https://wutiaowu5t5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Javascript设计模式 - 《中介者模式》</title>
+    <link href="https://wutiaowu5t5.github.io/posts/957fddbf/"/>
+    <id>https://wutiaowu5t5.github.io/posts/957fddbf/</id>
     <published>2024-04-08T07:24:24.000Z</published>
     <updated>2024-04-08T07:24:24.000Z</updated>
     
@@ -80,12 +61,12 @@
     <published>2024-04-08T07:24:24.000Z</published>
     <updated>2024-04-08T07:24:24.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p><strong>单例模式只涉及一个类，确保在系统中一个类只有一个实例，并提供一个全局访问入口</strong>许多时候整个系统只需要拥有一个全局对象，这样有利于我们协调系统整体的行为。</p><h2 id="实现条件"><a href="#实现条件" class="headerlink" title="实现条件"></a>实现条件</h2><ol><li>单例类的<strong>构造函数</strong>必须是<strong>私有的</strong>，这样才能将类的创建权控制在类的内部，从而使得类的外部不能创建类的实例。</li><li>单例类通过一个<strong>私有的静态变量</strong>来存储其唯一实例。</li><li>单例类通过提供一个<strong>公开的静态方法</strong>，使得外部使用者可以访问类的唯一实例</li></ol><blockquote><p>注意：</p><p>因为单例类的构造函数是私有的，所以单例类不能被继承</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>如果一个类的实例会被频繁的使用，当重复创建的时候会消耗优先的资源（例如dialog弹窗），那么这时候就可以使这个实例在全局内只能创建唯一一个（例如Vuex，Redux），减少资源的消耗</p><p><strong>单例模式只涉及一个类，确保在系统中一个类只有一个实例，并提供一个全局访问入口</strong></p><p>许多时候整个系统只需要拥有一个全局对象，这样有利于我们协调系统整体的行为</p><ol><li><p>优点</p><p>适合于单一对象，只生成一个对象实例，避免频繁创建和销毁实例，减少栈内存占用<br>只有一个实例且全局可访问该实例，便于维护一个全局实例对象</p></li><li><p>缺点</p><p>不适用动态扩展对象、创建多个相似对象的场景</p></li></ol><h2 id="实现条件"><a href="#实现条件" class="headerlink" title="实现条件"></a>实现条件</h2><ol><li>单例类的<strong>构造函数</strong>必须是<strong>私有的</strong>，这样才能将类的创建权控制在类的内部，从而使得类的外部不能创建类的实例。</li><li>单例类通过一个<strong>私有的静态变量</strong>来存储其唯一实例。</li><li>单例类通过提供一个<strong>公开的静态方法</strong>，使得外部使用者可以访问类的唯一实例</li></ol><blockquote><p>注意：</p><p>因为单例类的构造函数是私有的，所以单例类不能被继承</p></blockquote>]]></content>
     
     
       
       
-    <summary type="html">&lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;单例模式只涉及一个类，确保在系统中一个类只有一个实例，并提供一个全局访问入口&lt;/strong&gt;许多时候整个系统只需要拥有一个</summary>
+    <summary type="html">&lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h2&gt;&lt;p&gt;如果一个类的实例会被频繁的使用，当重复创建的时候会消耗优先的资源（例如dialog弹窗），那么这时候就可以使这个实例在全局内只能创建唯一一个</summary>
       
     
     
@@ -100,28 +81,9 @@
   </entry>
   
   <entry>
-    <title>Javascript设计模式 - 《备忘录模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/e88d43d9/"/>
-    <id>https://wutiaowu5t5.github.io/posts/e88d43d9/</id>
-    <published>2024-04-08T07:24:24.000Z</published>
-    <updated>2024-04-08T07:24:24.000Z</updated>
-    
-    
-    
-    
-    <category term="web" scheme="https://wutiaowu5t5.github.io/categories/web/"/>
-    
-    
-    <category term="javascript" scheme="https://wutiaowu5t5.github.io/tags/javascript/"/>
-    
-    <category term="设计模式" scheme="https://wutiaowu5t5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Javascript设计模式 - 《原型模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/14ddad5d/"/>
-    <id>https://wutiaowu5t5.github.io/posts/14ddad5d/</id>
+    <title>Javascript设计模式 - 《代理模式》</title>
+    <link href="https://wutiaowu5t5.github.io/posts/54233691/"/>
+    <id>https://wutiaowu5t5.github.io/posts/54233691/</id>
     <published>2024-04-08T07:24:24.000Z</published>
     <updated>2024-04-08T07:24:24.000Z</updated>
     
@@ -157,9 +119,9 @@
   </entry>
   
   <entry>
-    <title>Javascript设计模式 - 《外观模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/bd865a4b/"/>
-    <id>https://wutiaowu5t5.github.io/posts/bd865a4b/</id>
+    <title>Javascript设计模式 - 《原型模式》</title>
+    <link href="https://wutiaowu5t5.github.io/posts/14ddad5d/"/>
+    <id>https://wutiaowu5t5.github.io/posts/14ddad5d/</id>
     <published>2024-04-08T07:24:24.000Z</published>
     <updated>2024-04-08T07:24:24.000Z</updated>
     
@@ -176,9 +138,9 @@
   </entry>
   
   <entry>
-    <title>Javascript设计模式 - 《工厂模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/7e9872a1/"/>
-    <id>https://wutiaowu5t5.github.io/posts/7e9872a1/</id>
+    <title>Javascript设计模式 - 《备忘录模式》</title>
+    <link href="https://wutiaowu5t5.github.io/posts/e88d43d9/"/>
+    <id>https://wutiaowu5t5.github.io/posts/e88d43d9/</id>
     <published>2024-04-08T07:24:24.000Z</published>
     <updated>2024-04-08T07:24:24.000Z</updated>
     
@@ -233,6 +195,63 @@
   </entry>
   
   <entry>
+    <title>Javascript设计模式 - 《外观模式》</title>
+    <link href="https://wutiaowu5t5.github.io/posts/bd865a4b/"/>
+    <id>https://wutiaowu5t5.github.io/posts/bd865a4b/</id>
+    <published>2024-04-08T07:24:24.000Z</published>
+    <updated>2024-04-08T07:24:24.000Z</updated>
+    
+    
+    
+    
+    <category term="web" scheme="https://wutiaowu5t5.github.io/categories/web/"/>
+    
+    
+    <category term="javascript" scheme="https://wutiaowu5t5.github.io/tags/javascript/"/>
+    
+    <category term="设计模式" scheme="https://wutiaowu5t5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Javascript设计模式 - 《模版方法模式》</title>
+    <link href="https://wutiaowu5t5.github.io/posts/8472c90e/"/>
+    <id>https://wutiaowu5t5.github.io/posts/8472c90e/</id>
+    <published>2024-04-08T07:24:24.000Z</published>
+    <updated>2024-04-08T07:24:24.000Z</updated>
+    
+    
+    
+    
+    <category term="web" scheme="https://wutiaowu5t5.github.io/categories/web/"/>
+    
+    
+    <category term="javascript" scheme="https://wutiaowu5t5.github.io/tags/javascript/"/>
+    
+    <category term="设计模式" scheme="https://wutiaowu5t5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Javascript设计模式 - 《策略模式》</title>
+    <link href="https://wutiaowu5t5.github.io/posts/1445619f/"/>
+    <id>https://wutiaowu5t5.github.io/posts/1445619f/</id>
+    <published>2024-04-08T07:24:24.000Z</published>
+    <updated>2024-04-08T07:24:24.000Z</updated>
+    
+    
+    
+    
+    <category term="web" scheme="https://wutiaowu5t5.github.io/categories/web/"/>
+    
+    
+    <category term="javascript" scheme="https://wutiaowu5t5.github.io/tags/javascript/"/>
+    
+    <category term="设计模式" scheme="https://wutiaowu5t5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Javascript设计模式 - 《抽象工厂模式》</title>
     <link href="https://wutiaowu5t5.github.io/posts/7aab53ba/"/>
     <id>https://wutiaowu5t5.github.io/posts/7aab53ba/</id>
@@ -271,44 +290,6 @@
   </entry>
   
   <entry>
-    <title>Javascript设计模式 - 《策略模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/1445619f/"/>
-    <id>https://wutiaowu5t5.github.io/posts/1445619f/</id>
-    <published>2024-04-08T07:24:24.000Z</published>
-    <updated>2024-04-08T07:24:24.000Z</updated>
-    
-    
-    
-    
-    <category term="web" scheme="https://wutiaowu5t5.github.io/categories/web/"/>
-    
-    
-    <category term="javascript" scheme="https://wutiaowu5t5.github.io/tags/javascript/"/>
-    
-    <category term="设计模式" scheme="https://wutiaowu5t5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Javascript设计模式 - 《模版方法模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/8472c90e/"/>
-    <id>https://wutiaowu5t5.github.io/posts/8472c90e/</id>
-    <published>2024-04-08T07:24:24.000Z</published>
-    <updated>2024-04-08T07:24:24.000Z</updated>
-    
-    
-    
-    
-    <category term="web" scheme="https://wutiaowu5t5.github.io/categories/web/"/>
-    
-    
-    <category term="javascript" scheme="https://wutiaowu5t5.github.io/tags/javascript/"/>
-    
-    <category term="设计模式" scheme="https://wutiaowu5t5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Javascript设计模式 - 《组合模式》</title>
     <link href="https://wutiaowu5t5.github.io/posts/79a1bf69/"/>
     <id>https://wutiaowu5t5.github.io/posts/79a1bf69/</id>
@@ -328,28 +309,9 @@
   </entry>
   
   <entry>
-    <title>Javascript设计模式 - 《迭代器模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/b1de33a6/"/>
-    <id>https://wutiaowu5t5.github.io/posts/b1de33a6/</id>
-    <published>2024-04-08T07:24:24.000Z</published>
-    <updated>2024-04-08T07:24:24.000Z</updated>
-    
-    
-    
-    
-    <category term="web" scheme="https://wutiaowu5t5.github.io/categories/web/"/>
-    
-    
-    <category term="javascript" scheme="https://wutiaowu5t5.github.io/tags/javascript/"/>
-    
-    <category term="设计模式" scheme="https://wutiaowu5t5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Javascript设计模式 - 《适配器模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/edf2252f/"/>
-    <id>https://wutiaowu5t5.github.io/posts/edf2252f/</id>
+    <title>Javascript设计模式 - 《装饰器模式》</title>
+    <link href="https://wutiaowu5t5.github.io/posts/f51f74c/"/>
+    <id>https://wutiaowu5t5.github.io/posts/f51f74c/</id>
     <published>2024-04-08T07:24:24.000Z</published>
     <updated>2024-04-08T07:24:24.000Z</updated>
     
@@ -385,9 +347,47 @@
   </entry>
   
   <entry>
-    <title>Javascript设计模式 - 《访问者模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/edaaf222/"/>
-    <id>https://wutiaowu5t5.github.io/posts/edaaf222/</id>
+    <title>Javascript设计模式 - 《解释器模式》</title>
+    <link href="https://wutiaowu5t5.github.io/posts/29dbf566/"/>
+    <id>https://wutiaowu5t5.github.io/posts/29dbf566/</id>
+    <published>2024-04-08T07:24:24.000Z</published>
+    <updated>2024-04-08T07:24:24.000Z</updated>
+    
+    
+    
+    
+    <category term="web" scheme="https://wutiaowu5t5.github.io/categories/web/"/>
+    
+    
+    <category term="javascript" scheme="https://wutiaowu5t5.github.io/tags/javascript/"/>
+    
+    <category term="设计模式" scheme="https://wutiaowu5t5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Javascript设计模式 - 《工厂模式》</title>
+    <link href="https://wutiaowu5t5.github.io/posts/7e9872a1/"/>
+    <id>https://wutiaowu5t5.github.io/posts/7e9872a1/</id>
+    <published>2024-04-08T07:24:24.000Z</published>
+    <updated>2024-04-08T07:24:24.000Z</updated>
+    
+    
+    
+    
+    <category term="web" scheme="https://wutiaowu5t5.github.io/categories/web/"/>
+    
+    
+    <category term="javascript" scheme="https://wutiaowu5t5.github.io/tags/javascript/"/>
+    
+    <category term="设计模式" scheme="https://wutiaowu5t5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Javascript设计模式 - 《观察者模式》</title>
+    <link href="https://wutiaowu5t5.github.io/posts/73dbb689/"/>
+    <id>https://wutiaowu5t5.github.io/posts/73dbb689/</id>
     <published>2024-04-08T07:24:24.000Z</published>
     <updated>2024-04-08T07:24:24.000Z</updated>
     
