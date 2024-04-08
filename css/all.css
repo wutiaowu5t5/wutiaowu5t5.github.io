@@ -48,3 +48,7 @@
 
 /* 菜单激活色 */
 @import "tool/menuColor.css";
+
+#recent-posts > #pagination {
+    width: 100%;
+}

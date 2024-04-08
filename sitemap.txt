@@ -1,4 +1,5 @@
 https://wutiaowu5t5.github.io/posts/d6d4e12e/
+https://wutiaowu5t5.github.io/posts/a70ec0c6/
 https://wutiaowu5t5.github.io/about/index.html
 https://wutiaowu5t5.github.io/archives/index.html
 https://wutiaowu5t5.github.io/tags/index.html
@@ -52,8 +53,10 @@ https://wutiaowu5t5.github.io/posts/9d37818d/
 https://wutiaowu5t5.github.io/
 https://wutiaowu5t5.github.io/tags/Butterfly/
 https://wutiaowu5t5.github.io/tags/WEB/
+https://wutiaowu5t5.github.io/tags/git/
 https://wutiaowu5t5.github.io/tags/self/
 https://wutiaowu5t5.github.io/categories/%E5%BB%BA%E7%AB%99/
 https://wutiaowu5t5.github.io/categories/%E9%9D%A2%E8%AF%95/
+https://wutiaowu5t5.github.io/categories/web/
 https://wutiaowu5t5.github.io/categories/%E9%AD%94%E6%94%B9/
 https://wutiaowu5t5.github.io/categories/work/
