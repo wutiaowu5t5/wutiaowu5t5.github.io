@@ -17,25 +17,6 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Javascript设计模式 - 《享元模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/469c39d8/"/>
-    <id>https://wutiaowu5t5.github.io/posts/469c39d8/</id>
-    <published>2024-04-08T07:24:24.000Z</published>
-    <updated>2024-04-08T07:24:24.000Z</updated>
-    
-    
-    
-    
-    <category term="web" scheme="https://wutiaowu5t5.github.io/categories/web/"/>
-    
-    
-    <category term="javascript" scheme="https://wutiaowu5t5.github.io/tags/javascript/"/>
-    
-    <category term="设计模式" scheme="https://wutiaowu5t5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Javascript设计模式 - 《中介者模式》</title>
     <link href="https://wutiaowu5t5.github.io/posts/957fddbf/"/>
     <id>https://wutiaowu5t5.github.io/posts/957fddbf/</id>
@@ -61,13 +42,32 @@
     <published>2024-04-08T07:24:24.000Z</published>
     <updated>2024-04-08T07:24:24.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>如果一个类的实例会被频繁的使用，当重复创建的时候会消耗优先的资源（例如dialog弹窗），那么这时候就可以使这个实例在全局内只能创建唯一一个（例如Vuex，Redux），减少资源的消耗</p><p><strong>单例模式只涉及一个类，确保在系统中一个类只有一个实例，并提供一个全局访问入口</strong></p><p>许多时候整个系统只需要拥有一个全局对象，这样有利于我们协调系统整体的行为</p><ol><li><p>优点</p><p>适合于单一对象，只生成一个对象实例，避免频繁创建和销毁实例，减少栈内存占用<br>只有一个实例且全局可访问该实例，便于维护一个全局实例对象</p></li><li><p>缺点</p><p>不适用动态扩展对象、创建多个相似对象的场景</p></li></ol><h2 id="实现条件"><a href="#实现条件" class="headerlink" title="实现条件"></a>实现条件</h2><ol><li>单例类的<strong>构造函数</strong>必须是<strong>私有的</strong>，这样才能将类的创建权控制在类的内部，从而使得类的外部不能创建类的实例。</li><li>单例类通过一个<strong>私有的静态变量</strong>来存储其唯一实例。</li><li>单例类通过提供一个<strong>公开的静态方法</strong>，使得外部使用者可以访问类的唯一实例</li></ol><blockquote><p>注意：</p><p>因为单例类的构造函数是私有的，所以单例类不能被继承</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>如果一个类的实例会被频繁的使用，当重复创建的时候会消耗优先的资源（例如dialog弹窗），那么这时候就可以使这个实例在全局内只能创建唯一一个（例如Vuex，Redux），减少资源的消耗</p><p><strong>单例模式只涉及一个类，确保在系统中一个类只有一个实例，并提供一个全局访问入口</strong></p><p>许多时候整个系统只需要拥有一个全局对象，这样有利于我们协调系统整体的行为</p><ol><li><p>优点</p><p>适合于单一对象，只生成一个对象实例，避免频繁创建和销毁实例，减少栈内存占用<br>只有一个实例且全局可访问该实例，便于维护一个全局实例对象</p><p>划分命名空间，减少全局变量</p><p>增强模块性，把自己的代码组织在一个全局变量名下，放在单一位置，便于维护</p><p>且只会实例化一次。简化了代码的调试和维护</p></li><li><p>缺点</p><p>不适用动态扩展对象、创建多个相似对象的场景</p></li></ol><h2 id="实现条件"><a href="#实现条件" class="headerlink" title="实现条件"></a>实现条件</h2><ol><li>单例类的<strong>构造函数</strong>必须是<strong>私有的</strong>，这样才能将类的创建权控制在类的内部，从而使得类的外部不能创建类的实例。</li><li>单例类通过一个<strong>私有的静态变量</strong>来存储其唯一实例。</li><li>单例类通过提供一个<strong>公开的静态方法</strong>，使得外部使用者可以访问类的唯一实例</li></ol><blockquote><p>注意：</p><p>因为单例类的构造函数是私有的，所以单例类不能被继承</p></blockquote><h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><p>使用一个变量存储类实例对象（值初始为 <code>null/undefined</code> ）</p><p>进行类实例化时，判断类实例对象是否存在，存在则返回该实例，不存在则创建类实例后返回</p><p>多次调用类生成实例方法，返回同一个实例对象</p><ol><li><p>利用导出</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> <span class="title class_">Func</span> ()</span><br></pre></td></tr></table></figure></li><li><p>惰性单例（使用时才new）</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 单例模式类</span></span><br><span class="line"><span class="comment"> * 该类确保一个类只有一个实例，并且提供一个全局访问点来获得这个唯一实例。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">SingletonPattern</span> &#123;</span><br><span class="line">    <span class="comment">// 私有静态成员变量，用于保存唯一实例</span></span><br><span class="line">    <span class="keyword">static</span> #instance;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 私有构造函数</span></span><br><span class="line"><span class="comment">     * 防止通过new关键字创建多个实例。</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="title class_">SingletonPattern</span>.#instance) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&quot;Cannot instantiate singleton class using new operator.&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 公有静态方法，用于获取唯一实例</span></span><br><span class="line"><span class="comment">     * 如果实例不存在，则创建一个新的实例并返回；如果已存在，则直接返回该实例。</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@returns</span> &#123;<span class="type">SingletonPattern</span>&#125; 单例模式的唯一实例。</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">static</span> <span class="title function_">getInstance</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!<span class="title class_">SingletonPattern</span>.#instance) &#123;</span><br><span class="line">            <span class="title class_">SingletonPattern</span>.#instance = <span class="keyword">new</span> <span class="title class_">SingletonPattern</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="title class_">SingletonPattern</span>.#instance;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> instance1 = <span class="title class_">Singleton</span>.<span class="title function_">getInstance</span>()</span><br><span class="line"><span class="keyword">let</span> instance2 = <span class="title class_">Singleton</span>.<span class="title function_">getInstance</span>()</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(instance1 === instance2) <span class="comment">// 输出 true，两个实例相同</span></span><br></pre></td></tr></table></figure></li></ol><h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><ol><li>定义命名空间和实现分支型方法</li><li>登录框</li><li>vuex 和 redux中的store</li></ol>]]></content>
     
     
       
       
     <summary type="html">&lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h2&gt;&lt;p&gt;如果一个类的实例会被频繁的使用，当重复创建的时候会消耗优先的资源（例如dialog弹窗），那么这时候就可以使这个实例在全局内只能创建唯一一个</summary>
       
+    
+    
+    
+    <category term="web" scheme="https://wutiaowu5t5.github.io/categories/web/"/>
+    
+    
+    <category term="javascript" scheme="https://wutiaowu5t5.github.io/tags/javascript/"/>
+    
+    <category term="设计模式" scheme="https://wutiaowu5t5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Javascript设计模式 - 《原型模式》</title>
+    <link href="https://wutiaowu5t5.github.io/posts/14ddad5d/"/>
+    <id>https://wutiaowu5t5.github.io/posts/14ddad5d/</id>
+    <published>2024-04-08T07:24:24.000Z</published>
+    <updated>2024-04-08T07:24:24.000Z</updated>
+    
     
     
     
@@ -100,9 +100,9 @@
   </entry>
   
   <entry>
-    <title>Javascript设计模式 - 《命令模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/25e1ecde/"/>
-    <id>https://wutiaowu5t5.github.io/posts/25e1ecde/</id>
+    <title>Javascript设计模式 - 《外观模式》</title>
+    <link href="https://wutiaowu5t5.github.io/posts/bd865a4b/"/>
+    <id>https://wutiaowu5t5.github.io/posts/bd865a4b/</id>
     <published>2024-04-08T07:24:24.000Z</published>
     <updated>2024-04-08T07:24:24.000Z</updated>
     
@@ -119,9 +119,9 @@
   </entry>
   
   <entry>
-    <title>Javascript设计模式 - 《原型模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/14ddad5d/"/>
-    <id>https://wutiaowu5t5.github.io/posts/14ddad5d/</id>
+    <title>Javascript设计模式 - 《享元模式》</title>
+    <link href="https://wutiaowu5t5.github.io/posts/469c39d8/"/>
+    <id>https://wutiaowu5t5.github.io/posts/469c39d8/</id>
     <published>2024-04-08T07:24:24.000Z</published>
     <updated>2024-04-08T07:24:24.000Z</updated>
     
@@ -176,9 +176,9 @@
   </entry>
   
   <entry>
-    <title>Javascript设计模式 - 《桥接模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/2b8aa55b/"/>
-    <id>https://wutiaowu5t5.github.io/posts/2b8aa55b/</id>
+    <title>Javascript设计模式 - 《命令模式》</title>
+    <link href="https://wutiaowu5t5.github.io/posts/25e1ecde/"/>
+    <id>https://wutiaowu5t5.github.io/posts/25e1ecde/</id>
     <published>2024-04-08T07:24:24.000Z</published>
     <updated>2024-04-08T07:24:24.000Z</updated>
     
@@ -195,66 +195,9 @@
   </entry>
   
   <entry>
-    <title>Javascript设计模式 - 《外观模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/bd865a4b/"/>
-    <id>https://wutiaowu5t5.github.io/posts/bd865a4b/</id>
-    <published>2024-04-08T07:24:24.000Z</published>
-    <updated>2024-04-08T07:24:24.000Z</updated>
-    
-    
-    
-    
-    <category term="web" scheme="https://wutiaowu5t5.github.io/categories/web/"/>
-    
-    
-    <category term="javascript" scheme="https://wutiaowu5t5.github.io/tags/javascript/"/>
-    
-    <category term="设计模式" scheme="https://wutiaowu5t5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Javascript设计模式 - 《模版方法模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/8472c90e/"/>
-    <id>https://wutiaowu5t5.github.io/posts/8472c90e/</id>
-    <published>2024-04-08T07:24:24.000Z</published>
-    <updated>2024-04-08T07:24:24.000Z</updated>
-    
-    
-    
-    
-    <category term="web" scheme="https://wutiaowu5t5.github.io/categories/web/"/>
-    
-    
-    <category term="javascript" scheme="https://wutiaowu5t5.github.io/tags/javascript/"/>
-    
-    <category term="设计模式" scheme="https://wutiaowu5t5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Javascript设计模式 - 《策略模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/1445619f/"/>
-    <id>https://wutiaowu5t5.github.io/posts/1445619f/</id>
-    <published>2024-04-08T07:24:24.000Z</published>
-    <updated>2024-04-08T07:24:24.000Z</updated>
-    
-    
-    
-    
-    <category term="web" scheme="https://wutiaowu5t5.github.io/categories/web/"/>
-    
-    
-    <category term="javascript" scheme="https://wutiaowu5t5.github.io/tags/javascript/"/>
-    
-    <category term="设计模式" scheme="https://wutiaowu5t5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Javascript设计模式 - 《抽象工厂模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/7aab53ba/"/>
-    <id>https://wutiaowu5t5.github.io/posts/7aab53ba/</id>
+    <title>Javascript设计模式 - 《工厂模式》</title>
+    <link href="https://wutiaowu5t5.github.io/posts/7e9872a1/"/>
+    <id>https://wutiaowu5t5.github.io/posts/7e9872a1/</id>
     <published>2024-04-08T07:24:24.000Z</published>
     <updated>2024-04-08T07:24:24.000Z</updated>
     
@@ -290,9 +233,9 @@
   </entry>
   
   <entry>
-    <title>Javascript设计模式 - 《组合模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/79a1bf69/"/>
-    <id>https://wutiaowu5t5.github.io/posts/79a1bf69/</id>
+    <title>Javascript设计模式 - 《抽象工厂模式》</title>
+    <link href="https://wutiaowu5t5.github.io/posts/7aab53ba/"/>
+    <id>https://wutiaowu5t5.github.io/posts/7aab53ba/</id>
     <published>2024-04-08T07:24:24.000Z</published>
     <updated>2024-04-08T07:24:24.000Z</updated>
     
@@ -309,9 +252,92 @@
   </entry>
   
   <entry>
-    <title>Javascript设计模式 - 《装饰器模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/f51f74c/"/>
-    <id>https://wutiaowu5t5.github.io/posts/f51f74c/</id>
+    <title>Javascript设计模式 - 《策略模式》</title>
+    <link href="https://wutiaowu5t5.github.io/posts/1445619f/"/>
+    <id>https://wutiaowu5t5.github.io/posts/1445619f/</id>
+    <published>2024-04-08T07:24:24.000Z</published>
+    <updated>2024-04-08T07:24:24.000Z</updated>
+    
+    
+    
+    
+    <category term="web" scheme="https://wutiaowu5t5.github.io/categories/web/"/>
+    
+    
+    <category term="javascript" scheme="https://wutiaowu5t5.github.io/tags/javascript/"/>
+    
+    <category term="设计模式" scheme="https://wutiaowu5t5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Javascript设计模式 - 《模版方法模式》</title>
+    <link href="https://wutiaowu5t5.github.io/posts/8472c90e/"/>
+    <id>https://wutiaowu5t5.github.io/posts/8472c90e/</id>
+    <published>2024-04-08T07:24:24.000Z</published>
+    <updated>2024-04-08T07:24:24.000Z</updated>
+    
+    
+    
+    
+    <category term="web" scheme="https://wutiaowu5t5.github.io/categories/web/"/>
+    
+    
+    <category term="javascript" scheme="https://wutiaowu5t5.github.io/tags/javascript/"/>
+    
+    <category term="设计模式" scheme="https://wutiaowu5t5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Javascript设计模式 - 《桥接模式》</title>
+    <link href="https://wutiaowu5t5.github.io/posts/2b8aa55b/"/>
+    <id>https://wutiaowu5t5.github.io/posts/2b8aa55b/</id>
+    <published>2024-04-08T07:24:24.000Z</published>
+    <updated>2024-04-08T07:24:24.000Z</updated>
+    
+    
+    
+    
+    <category term="web" scheme="https://wutiaowu5t5.github.io/categories/web/"/>
+    
+    
+    <category term="javascript" scheme="https://wutiaowu5t5.github.io/tags/javascript/"/>
+    
+    <category term="设计模式" scheme="https://wutiaowu5t5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Javascript设计模式汇总</title>
+    <link href="https://wutiaowu5t5.github.io/posts/d342d2ec/"/>
+    <id>https://wutiaowu5t5.github.io/posts/d342d2ec/</id>
+    <published>2024-04-08T07:24:24.000Z</published>
+    <updated>2024-04-08T07:24:24.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="设计模式是什么"><a href="#设计模式是什么" class="headerlink" title="设计模式是什么"></a>设计模式是什么</h2><p>设计模式是在软件工程中被反复使用的、经过验证的解决方案，用于解决特定问题或设计软件架构。它们提供了一种在设计和开发过程中重用的可靠方式，有助于解决常见的设计问题并促进代码的可维护性、可扩展性和可重用性。</p><p>设计模式并不是一种具体的编程语言特性或库，而是一种通用的解决方案。它们是从实际开发经验中总结出来的，并被广泛接受和使用。设计模式通常包括了面向对象设计的一些基本原则和惯例，通过它们可以更好地组织代码结构、降低耦合度、提高代码的灵活性和可维护性。</p><p>设计模式之所以出现，是因为在软件开发中经常会遇到一些常见的问题，比如对象创建、对象之间的关系、算法的选择等等。这些问题在不同的项目和场景中可能会多次出现，因此工程师们开始寻找并提炼出一些通用的解决方案，这就是设计模式产生的原因。</p><p>设计模式有助于开发人员更快速地理解和解决问题，提高了开发效率。此外，它们还有助于提高代码的可读性和可维护性，因为它们是经过验证的、被广泛认可的解决方案，可以减少因为设计上的错误而造成的后续问题。</p><h2 id="设计模式遵循原则"><a href="#设计模式遵循原则" class="headerlink" title="设计模式遵循原则"></a>设计模式遵循原则</h2><p>设计模式的原则通常指的是一些基本的设计理念和规范，它们指导着设计模式的实现和应用。以下是一些常见的设计模式原则：</p><ol><li><p><strong>单一责任原则（Single Responsibility Principle, SRP）</strong>：</p><p>一个类应该只有一个引起变化的原因</p><p>换句话说，一个类应该只负责一项职责</p></li><li><p><strong>开放-封闭原则（Open-Closed Principle, OCP）</strong>：</p><p>软件实体（类、模块、函数等）应该对扩展开放，对修改关闭</p><p>即应该通过扩展现有代码来实现新功能，而不是直接修改已有代码</p></li><li><p><strong>里氏替换原则（Liskov Substitution Principle, LSP）</strong>：</p><p>所有能够使用父类对象的地方都应该能够使用子类对象</p><p>即子类应该能够替换父类并且不影响程序的正确性</p></li><li><p><strong>依赖倒置原则（Dependency Inversion Principle, DIP）</strong>：</p><p>高层模块不应该依赖于低层模块，两者都应该依赖于抽象</p><p>抽象不应该依赖于具体实现细节，具体实现细节应该依赖于抽象</p></li><li><p><strong>接口隔离原则（Interface Segregation Principle, ISP）</strong>：</p><p>客户端不应该被迫依赖于它们不使用的接口</p><p>即应该将大接口拆分成更小、更具体的接口，以便客户端只需要知道它们需要使用的接口</p></li><li><p><strong>合成/聚合复用原则（Composition/Aggregation Reuse Principle, CARP）</strong>：</p><p>优先使用对象组合/聚合，而不是继承来达到代码复用的目的</p><p>通过将对象组合到新的对象中，而不是通过继承来实现代码复用，可以更灵活地实现代码的复用</p></li></ol><p>这些原则是面向对象设计的基础，设计模式通常都遵循这些原则，以提高代码的可维护性、可扩展性和可重用性</p><h2 id="设计模式分类"><a href="#设计模式分类" class="headerlink" title="设计模式分类"></a>设计模式分类</h2><ol><li><p>创建型</p><div class='checkbox green checked'><input type="checkbox" checked="checked"/>            <p><a href="https://wutiaowu5t5.github.io/posts/4fda2d18/">单例模式</a></p>            </div><div class='checkbox gray'><input type="checkbox" />            <p>原型模式</p>            </div><div class='checkbox gray'><input type="checkbox" />            <p>工厂模式</p>            </div><div class='checkbox gray'><input type="checkbox" />            <p>抽象工厂模式</p>            </div><div class='checkbox gray'><input type="checkbox" />            <p>建造者模式</p>            </div></li><li><p>结构型</p><div class='checkbox gray'><input type="checkbox" />            <p>适配器模式</p>            </div><div class='checkbox gray'><input type="checkbox" />            <p>装饰器模式</p>            </div><div class='checkbox gray'><input type="checkbox" />            <p>代理模式</p>            </div><div class='checkbox gray'><input type="checkbox" />            <p>外观模式</p>            </div><div class='checkbox gray'><input type="checkbox" />            <p>桥接模式</p>            </div><div class='checkbox gray'><input type="checkbox" />            <p>组合模式</p>            </div><div class='checkbox gray'><input type="checkbox" />            <p>享元模式</p>            </div></li><li><p>行为型</p><div class='checkbox gray'><input type="checkbox" />            <p>观察者模式</p>            </div><div class='checkbox gray'><input type="checkbox" />            <p>迭代器模式</p>            </div><div class='checkbox gray'><input type="checkbox" />            <p>策略模式</p>            </div><div class='checkbox gray'><input type="checkbox" />            <p>模板方法模式</p>            </div><div class='checkbox gray'><input type="checkbox" />            <p>职责链模式</p>            </div><div class='checkbox gray'><input type="checkbox" />            <p>命令模式</p>            </div><div class='checkbox gray'><input type="checkbox" />            <p>备忘录模式</p>            </div><div class='checkbox gray'><input type="checkbox" />            <p>状态模式</p>            </div><div class='checkbox gray'><input type="checkbox" />            <p>访问者模式</p>            </div><div class='checkbox gray'><input type="checkbox" />            <p>中介者模式</p>            </div><div class='checkbox gray'><input type="checkbox" />            <p>解释器模式</p>            </div></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;设计模式是什么&quot;&gt;&lt;a href=&quot;#设计模式是什么&quot; class=&quot;headerlink&quot; title=&quot;设计模式是什么&quot;&gt;&lt;/a&gt;设计模式是什么&lt;/h2&gt;&lt;p&gt;设计模式是在软件工程中被反复使用的、经过验证的解决方案，用于解决特定问题或设计软件架构。它们提供了一</summary>
+      
+    
+    
+    
+    <category term="web" scheme="https://wutiaowu5t5.github.io/categories/web/"/>
+    
+    
+    <category term="javascript" scheme="https://wutiaowu5t5.github.io/tags/javascript/"/>
+    
+    <category term="设计模式" scheme="https://wutiaowu5t5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Javascript设计模式 - 《组合模式》</title>
+    <link href="https://wutiaowu5t5.github.io/posts/79a1bf69/"/>
+    <id>https://wutiaowu5t5.github.io/posts/79a1bf69/</id>
     <published>2024-04-08T07:24:24.000Z</published>
     <updated>2024-04-08T07:24:24.000Z</updated>
     
@@ -366,28 +392,9 @@
   </entry>
   
   <entry>
-    <title>Javascript设计模式 - 《工厂模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/7e9872a1/"/>
-    <id>https://wutiaowu5t5.github.io/posts/7e9872a1/</id>
-    <published>2024-04-08T07:24:24.000Z</published>
-    <updated>2024-04-08T07:24:24.000Z</updated>
-    
-    
-    
-    
-    <category term="web" scheme="https://wutiaowu5t5.github.io/categories/web/"/>
-    
-    
-    <category term="javascript" scheme="https://wutiaowu5t5.github.io/tags/javascript/"/>
-    
-    <category term="设计模式" scheme="https://wutiaowu5t5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Javascript设计模式 - 《观察者模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/73dbb689/"/>
-    <id>https://wutiaowu5t5.github.io/posts/73dbb689/</id>
+    <title>Javascript设计模式 - 《迭代器模式》</title>
+    <link href="https://wutiaowu5t5.github.io/posts/b1de33a6/"/>
+    <id>https://wutiaowu5t5.github.io/posts/b1de33a6/</id>
     <published>2024-04-08T07:24:24.000Z</published>
     <updated>2024-04-08T07:24:24.000Z</updated>
     
