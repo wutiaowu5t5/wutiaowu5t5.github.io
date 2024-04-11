@@ -68,30 +68,36 @@
   </entry>
   
   <entry>
-    <title>Javascript设计模式 - 《享元模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/469c39d8/"/>
-    <id>https://wutiaowu5t5.github.io/posts/469c39d8/</id>
-    <published>2024-04-08T07:24:24.000Z</published>
+    <title>Git提交规范记录</title>
+    <link href="https://wutiaowu5t5.github.io/posts/a70ec0c6/"/>
+    <id>https://wutiaowu5t5.github.io/posts/a70ec0c6/</id>
+    <published>2024-04-07T07:24:24.000Z</published>
     <updated>2024-04-08T07:24:24.000Z</updated>
     
+    <content type="html"><![CDATA[<h2 id="Commit-Message作用"><a href="#Commit-Message作用" class="headerlink" title="Commit Message作用"></a>Commit Message作用</h2><ol><li><p>提供更多的历史信息，方便快速浏览</p><p>比如，下面的命令显示上次发布后的变动，每个commit占据一行。你只看行首，就知道某次 commit 的目的</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> &lt;last tag&gt; HEAD --pretty=format:%s</span><br></pre></td></tr></table></figure></li><li><p>可以过滤某些commit（比如文档改动），便于快速查找信息</p><p>比如，下面的命令仅仅显示本次发布新增加的功能</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span> &lt;last release&gt; HEAD --grep feature</span><br></pre></td></tr></table></figure></li><li><p>可以直接从commit生成Change log</p><p>Change Log 是发布新版本时，用来说明与上一个版本差异的文档</p></li></ol><h2 id="Commit-Message-的格式"><a href="#Commit-Message-的格式" class="headerlink" title="Commit Message 的格式"></a>Commit Message 的格式</h2><p>每次提交，Commit message 都包括三个部分：Header，Body 和 Footer</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="built_in">type</span>&gt;(&lt;scope&gt;): &lt;subject&gt;// 空一行&lt;body&gt;// 空一行&lt;footer&gt;</span><br></pre></td></tr></table></figure><p>其中，Header 是必需的，Body 和 Footer 可以省略</p><p>不管是哪一个部分，任何一行都不得超过72个字符（或100个字符）。这是为了避免自动换行影响美观</p><ol><li><p>Header</p><p>Header部分只有一行，包括三个字段：type（必需）、scope（可选）和subject（必需）</p><ul><li><p>type</p><p>type用于说明 commit 的类别，只允许使用下面7个标识</p><p>feat：新功能（feature）</p><p>fix：修补bug</p><p>docs：文档（documentation）</p><p>style： 格式（不影响代码运行的变动）</p><p>refactor：重构（即不是新增功能，也不是修改bug的代码变动）</p><p>test：增加测试</p><p>chore：构建过程或辅助工具的变动</p></li><li><p>scope</p><p>scope用于说明 commit 影响的范围，比如数据层、控制层、视图层等等，视项目不同而不同</p></li><li><p>subject</p><p>subject是 commit 目的的简短描述，不超过50个字符</p><p>以动词开头，使用第一人称现在时，比如change，而不是changed或changes</p><p>第一个字母小写</p><p>结尾不加句号（.）</p></li></ul></li><li><p>Body</p><p>Body 部分是对本次 commit 的详细描述，可以分成多行。下面是一个范例</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">More detailed explanatory text, <span class="keyword">if</span> necessary.  Wrap it to </span><br><span class="line">about 72 characters or so. Further paragraphs come after blank lines.- Bullet points are okay, too- Use a hanging indent</span><br></pre></td></tr></table></figure><p>说明代码变动的动机，以及与以前行为的对比</p></li><li><p>Footer</p><ol><li><p>Footer 部分只用于两种情况</p><p>如果当前代码与上一个版本不兼容，则 Footer 部分以BREAKING CHANGE开头，后面是对变动的描述、以及变动理由和迁移方法</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">BREAKING CHANGE: isolate scope bindings definition has changed.</span><br><span class="line"></span><br><span class="line">    To migrate the code follow the example below:</span><br><span class="line"></span><br><span class="line">    Before:</span><br><span class="line"></span><br><span class="line">    scope: &#123;</span><br><span class="line">      myAttr: <span class="string">&#x27;attribute&#x27;</span>,</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    After:</span><br><span class="line"></span><br><span class="line">    scope: &#123;</span><br><span class="line">      myAttr: <span class="string">&#x27;@&#x27;</span>,</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    The removed `inject` wasn<span class="string">&#x27;t generaly useful for directives so there should be no code using it.</span></span><br></pre></td></tr></table></figure></li><li><p>关闭 Issue</p><p>如果当前 commit 针对某个issue，那么可以在 Footer 部分关闭这个 issue </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Closes <span class="comment">#234</span></span><br></pre></td></tr></table></figure><p>也可以一次关闭多个 issue </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Closes <span class="comment">#123, #245, #992</span></span><br></pre></td></tr></table></figure></li></ol></li><li><p>Revert</p><p>还有一种特殊情况，如果当前 commit 用于撤销以前的 commit，则必须以revert:开头，后面跟着被撤销 Commit 的 Header</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">revert: feat(pencil): add <span class="string">&#x27;graphiteWidth&#x27;</span> option</span><br><span class="line"></span><br><span class="line">This reverts commit 667ecc1654a317a13331b17617d973392f415f02.</span><br></pre></td></tr></table></figure><p>Body部分的格式是固定的，必须写成This reverts commit <hash>.，其中的hash是被撤销 commit 的 SHA 标识符</p><p>如果当前 commit 与被撤销的 commit，在同一个发布（release）里面，那么它们都不会出现在 Change log 里面。如果两者在不同的发布，那么当前 commit，会出现在 Change log 的Reverts小标题下面</p></li></ol><h2 id="Commitizen"><a href="#Commitizen" class="headerlink" title="Commitizen"></a>Commitizen</h2><p>Commitizen是一个撰写合格 Commit message 的工具。</p><p>安装命令如下。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g commitizen</span><br></pre></td></tr></table></figure><p>然后，在项目目录里，运行下面的命令，使其支持 Angular 的 Commit message 格式。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ commitizen init cz-conventional-changelog --save --save-exact</span><br></pre></td></tr></table></figure><p>以后，凡是用到git commit命令，一律改为使用git cz。这时，就会出现选项，用来生成符合格式的 Commit message。</p><p><img src="https://yqfile.alicdn.com/429b439c9f9f422039f8c2afbb4886bd034e5b3f.png" alt="screenshot"></p><h2 id="validate-commit-msg"><a href="#validate-commit-msg" class="headerlink" title="validate-commit-msg"></a>validate-commit-msg</h2><p>validate-commit-msg 用于检查 Node 项目的 Commit message 是否符合格式</p><p>它的安装是手动的。首先，拷贝下面这个JS文件，放入你的代码库。文件名可以取为validate-commit-msg.js</p><p>接着，把这个脚本加入 Git 的 hook。下面是在package.json里面使用 ghooks，把这个脚本加为commit-msg时运行</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;config&quot;</span>: &#123;</span><br><span class="line">  <span class="string">&quot;ghooks&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;commit-msg&quot;</span>: <span class="string">&quot;./validate-commit-msg.js&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>然后，每次git commit的时候，这个脚本就会自动检查 Commit message 是否合格。如果不合格，就会报错</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git add -A </span><br><span class="line">$ git commit -m <span class="string">&quot;edit markdown&quot;</span> INVALID COMMIT MSG: does not match <span class="string">&quot;&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;&quot;</span> ! was: edit markdown</span><br></pre></td></tr></table></figure><h2 id="生成-Change-log"><a href="#生成-Change-log" class="headerlink" title="生成 Change log"></a>生成 Change log</h2><p>如果你的所有 Commit 都符合 Angular 格式，那么发布新版本时， Change log 就可以用脚本自动生成（例1，例2，例3）</p><p>生成的文档包括以下三个部分</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">New features</span><br><span class="line"></span><br><span class="line">Bug fixes</span><br><span class="line"></span><br><span class="line">Breaking changes.</span><br></pre></td></tr></table></figure><p>每个部分都会罗列相关的 commit ，并且有指向这些 commit 的链接。当然，生成的文档允许手动修改，所以发布前，你还可以添加其他内容</p><p>conventional-changelog 就是生成 Change log 的工具，运行下面的命令即可</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g conventional-changelog</span><br><span class="line">$ <span class="built_in">cd</span> my-project</span><br><span class="line">$ conventional-changelog -p angular -i CHANGELOG.md -w</span><br></pre></td></tr></table></figure><p>上面命令不会覆盖以前的 Change log，只会在CHANGELOG.md的头部加上自从上次发布以来的变动</p><p>如果你想生成所有发布的 Change log，要改为运行下面的命令</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ conventional-changelog -p angular -i CHANGELOG.md -w -r 0</span><br></pre></td></tr></table></figure><p>为了方便使用，可以将其写入package.json的scripts字段</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;scripts&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;changelog&quot;</span>: <span class="string">&quot;conventional-changelog -p angular -i CHANGELOG.md -w -r 0&quot;</span></span><br><span class="line">  &#125;&#125;</span><br></pre></td></tr></table></figure><p>以后，直接运行下面的命令即可</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm run changelog</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;Commit-Message作用&quot;&gt;&lt;a href=&quot;#Commit-Message作用&quot; class=&quot;headerlink&quot; title=&quot;Commit Message作用&quot;&gt;&lt;/a&gt;Commit Message作用&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;提供更多的</summary>
+      
     
     
     
     <category term="web" scheme="https://wutiaowu5t5.github.io/categories/web/"/>
     
     
-    <category term="javascript" scheme="https://wutiaowu5t5.github.io/tags/javascript/"/>
-    
-    <category term="设计模式" scheme="https://wutiaowu5t5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    <category term="git" scheme="https://wutiaowu5t5.github.io/tags/git/"/>
     
   </entry>
   
   <entry>
-    <title>Javascript设计模式 - 《代理模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/54233691/"/>
-    <id>https://wutiaowu5t5.github.io/posts/54233691/</id>
-    <published>2024-04-08T07:24:24.000Z</published>
-    <updated>2024-04-08T07:24:24.000Z</updated>
+    <title>Javascript设计模式 - 《解释器模式》</title>
+    <link href="https://wutiaowu5t5.github.io/posts/29dbf566/"/>
+    <id>https://wutiaowu5t5.github.io/posts/29dbf566/</id>
+    <published>2024-04-07T07:24:24.000Z</published>
+    <updated>2024-04-07T07:24:24.000Z</updated>
     
     
     
@@ -109,8 +115,8 @@
     <title>Javascript设计模式 - 《中介者模式》</title>
     <link href="https://wutiaowu5t5.github.io/posts/957fddbf/"/>
     <id>https://wutiaowu5t5.github.io/posts/957fddbf/</id>
-    <published>2024-04-08T07:24:24.000Z</published>
-    <updated>2024-04-08T07:24:24.000Z</updated>
+    <published>2024-04-06T07:24:24.000Z</published>
+    <updated>2024-04-06T07:24:24.000Z</updated>
     
     
     
@@ -125,87 +131,11 @@
   </entry>
   
   <entry>
-    <title>Javascript设计模式 - 《命令模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/25e1ecde/"/>
-    <id>https://wutiaowu5t5.github.io/posts/25e1ecde/</id>
-    <published>2024-04-08T07:24:24.000Z</published>
-    <updated>2024-04-08T07:24:24.000Z</updated>
-    
-    
-    
-    
-    <category term="web" scheme="https://wutiaowu5t5.github.io/categories/web/"/>
-    
-    
-    <category term="javascript" scheme="https://wutiaowu5t5.github.io/tags/javascript/"/>
-    
-    <category term="设计模式" scheme="https://wutiaowu5t5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Javascript设计模式 - 《备忘录模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/e88d43d9/"/>
-    <id>https://wutiaowu5t5.github.io/posts/e88d43d9/</id>
-    <published>2024-04-08T07:24:24.000Z</published>
-    <updated>2024-04-08T07:24:24.000Z</updated>
-    
-    
-    
-    
-    <category term="web" scheme="https://wutiaowu5t5.github.io/categories/web/"/>
-    
-    
-    <category term="javascript" scheme="https://wutiaowu5t5.github.io/tags/javascript/"/>
-    
-    <category term="设计模式" scheme="https://wutiaowu5t5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Javascript设计模式 - 《外观模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/bd865a4b/"/>
-    <id>https://wutiaowu5t5.github.io/posts/bd865a4b/</id>
-    <published>2024-04-08T07:24:24.000Z</published>
-    <updated>2024-04-08T07:24:24.000Z</updated>
-    
-    
-    
-    
-    <category term="web" scheme="https://wutiaowu5t5.github.io/categories/web/"/>
-    
-    
-    <category term="javascript" scheme="https://wutiaowu5t5.github.io/tags/javascript/"/>
-    
-    <category term="设计模式" scheme="https://wutiaowu5t5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Javascript设计模式 - 《桥接模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/2b8aa55b/"/>
-    <id>https://wutiaowu5t5.github.io/posts/2b8aa55b/</id>
-    <published>2024-04-08T07:24:24.000Z</published>
-    <updated>2024-04-08T07:24:24.000Z</updated>
-    
-    
-    
-    
-    <category term="web" scheme="https://wutiaowu5t5.github.io/categories/web/"/>
-    
-    
-    <category term="javascript" scheme="https://wutiaowu5t5.github.io/tags/javascript/"/>
-    
-    <category term="设计模式" scheme="https://wutiaowu5t5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Javascript设计模式 - 《模版方法模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/8472c90e/"/>
-    <id>https://wutiaowu5t5.github.io/posts/8472c90e/</id>
-    <published>2024-04-08T07:24:24.000Z</published>
-    <updated>2024-04-08T07:24:24.000Z</updated>
+    <title>Javascript设计模式 - 《访问者模式》</title>
+    <link href="https://wutiaowu5t5.github.io/posts/edaaf222/"/>
+    <id>https://wutiaowu5t5.github.io/posts/edaaf222/</id>
+    <published>2024-04-05T07:24:24.000Z</published>
+    <updated>2024-04-05T07:24:24.000Z</updated>
     
     
     
@@ -223,8 +153,8 @@
     <title>Javascript设计模式 - 《状态模式》</title>
     <link href="https://wutiaowu5t5.github.io/posts/d207f3e/"/>
     <id>https://wutiaowu5t5.github.io/posts/d207f3e/</id>
-    <published>2024-04-08T07:24:24.000Z</published>
-    <updated>2024-04-08T07:24:24.000Z</updated>
+    <published>2024-04-04T07:24:24.000Z</published>
+    <updated>2024-04-04T07:24:24.000Z</updated>
     
     
     
@@ -239,11 +169,11 @@
   </entry>
   
   <entry>
-    <title>Javascript设计模式 - 《策略模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/1445619f/"/>
-    <id>https://wutiaowu5t5.github.io/posts/1445619f/</id>
-    <published>2024-04-08T07:24:24.000Z</published>
-    <updated>2024-04-08T07:24:24.000Z</updated>
+    <title>Javascript设计模式 - 《备忘录模式》</title>
+    <link href="https://wutiaowu5t5.github.io/posts/e88d43d9/"/>
+    <id>https://wutiaowu5t5.github.io/posts/e88d43d9/</id>
+    <published>2024-04-03T07:24:24.000Z</published>
+    <updated>2024-04-03T07:24:24.000Z</updated>
     
     
     
@@ -258,11 +188,11 @@
   </entry>
   
   <entry>
-    <title>Javascript设计模式 - 《建造者模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/7e3e0f32/"/>
-    <id>https://wutiaowu5t5.github.io/posts/7e3e0f32/</id>
-    <published>2024-04-08T07:24:24.000Z</published>
-    <updated>2024-04-08T07:24:24.000Z</updated>
+    <title>Javascript设计模式 - 《命令模式》</title>
+    <link href="https://wutiaowu5t5.github.io/posts/25e1ecde/"/>
+    <id>https://wutiaowu5t5.github.io/posts/25e1ecde/</id>
+    <published>2024-04-02T07:24:24.000Z</published>
+    <updated>2024-04-02T07:24:24.000Z</updated>
     
     
     
@@ -280,8 +210,8 @@
     <title>Javascript设计模式 - 《职责链模式》</title>
     <link href="https://wutiaowu5t5.github.io/posts/ae2b73e3/"/>
     <id>https://wutiaowu5t5.github.io/posts/ae2b73e3/</id>
-    <published>2024-04-08T07:24:24.000Z</published>
-    <updated>2024-04-08T07:24:24.000Z</updated>
+    <published>2024-04-01T07:24:24.000Z</published>
+    <updated>2024-04-01T07:24:24.000Z</updated>
     
     
     
@@ -296,11 +226,11 @@
   </entry>
   
   <entry>
-    <title>Javascript设计模式 - 《组合模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/79a1bf69/"/>
-    <id>https://wutiaowu5t5.github.io/posts/79a1bf69/</id>
-    <published>2024-04-08T07:24:24.000Z</published>
-    <updated>2024-04-08T07:24:24.000Z</updated>
+    <title>Javascript设计模式 - 《模版方法模式》</title>
+    <link href="https://wutiaowu5t5.github.io/posts/8472c90e/"/>
+    <id>https://wutiaowu5t5.github.io/posts/8472c90e/</id>
+    <published>2024-03-30T07:24:24.000Z</published>
+    <updated>2024-03-30T07:24:24.000Z</updated>
     
     
     
@@ -315,49 +245,11 @@
   </entry>
   
   <entry>
-    <title>Javascript设计模式 - 《装饰器模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/f51f74c/"/>
-    <id>https://wutiaowu5t5.github.io/posts/f51f74c/</id>
-    <published>2024-04-08T07:24:24.000Z</published>
-    <updated>2024-04-08T07:24:24.000Z</updated>
-    
-    
-    
-    
-    <category term="web" scheme="https://wutiaowu5t5.github.io/categories/web/"/>
-    
-    
-    <category term="javascript" scheme="https://wutiaowu5t5.github.io/tags/javascript/"/>
-    
-    <category term="设计模式" scheme="https://wutiaowu5t5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Javascript设计模式 - 《解释器模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/29dbf566/"/>
-    <id>https://wutiaowu5t5.github.io/posts/29dbf566/</id>
-    <published>2024-04-08T07:24:24.000Z</published>
-    <updated>2024-04-08T07:24:24.000Z</updated>
-    
-    
-    
-    
-    <category term="web" scheme="https://wutiaowu5t5.github.io/categories/web/"/>
-    
-    
-    <category term="javascript" scheme="https://wutiaowu5t5.github.io/tags/javascript/"/>
-    
-    <category term="设计模式" scheme="https://wutiaowu5t5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Javascript设计模式 - 《观察者模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/73dbb689/"/>
-    <id>https://wutiaowu5t5.github.io/posts/73dbb689/</id>
-    <published>2024-04-08T07:24:24.000Z</published>
-    <updated>2024-04-08T07:24:24.000Z</updated>
+    <title>Javascript设计模式 - 《策略模式》</title>
+    <link href="https://wutiaowu5t5.github.io/posts/1445619f/"/>
+    <id>https://wutiaowu5t5.github.io/posts/1445619f/</id>
+    <published>2024-03-29T07:24:24.000Z</published>
+    <updated>2024-03-29T07:24:24.000Z</updated>
     
     
     
@@ -375,8 +267,8 @@
     <title>Javascript设计模式 - 《迭代器模式》</title>
     <link href="https://wutiaowu5t5.github.io/posts/b1de33a6/"/>
     <id>https://wutiaowu5t5.github.io/posts/b1de33a6/</id>
-    <published>2024-04-08T07:24:24.000Z</published>
-    <updated>2024-04-08T07:24:24.000Z</updated>
+    <published>2024-03-28T07:24:24.000Z</published>
+    <updated>2024-03-28T07:24:24.000Z</updated>
     
     
     
@@ -391,11 +283,125 @@
   </entry>
   
   <entry>
-    <title>Javascript设计模式 - 《适配器模式》</title>
-    <link href="https://wutiaowu5t5.github.io/posts/edf2252f/"/>
-    <id>https://wutiaowu5t5.github.io/posts/edf2252f/</id>
-    <published>2024-04-08T07:24:24.000Z</published>
-    <updated>2024-04-08T07:24:24.000Z</updated>
+    <title>Javascript设计模式 - 《观察者模式》</title>
+    <link href="https://wutiaowu5t5.github.io/posts/73dbb689/"/>
+    <id>https://wutiaowu5t5.github.io/posts/73dbb689/</id>
+    <published>2024-03-27T07:24:24.000Z</published>
+    <updated>2024-03-27T07:24:24.000Z</updated>
+    
+    
+    
+    
+    <category term="web" scheme="https://wutiaowu5t5.github.io/categories/web/"/>
+    
+    
+    <category term="javascript" scheme="https://wutiaowu5t5.github.io/tags/javascript/"/>
+    
+    <category term="设计模式" scheme="https://wutiaowu5t5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Javascript设计模式 - 《享元模式》</title>
+    <link href="https://wutiaowu5t5.github.io/posts/469c39d8/"/>
+    <id>https://wutiaowu5t5.github.io/posts/469c39d8/</id>
+    <published>2024-03-26T07:24:24.000Z</published>
+    <updated>2024-03-26T07:24:24.000Z</updated>
+    
+    
+    
+    
+    <category term="web" scheme="https://wutiaowu5t5.github.io/categories/web/"/>
+    
+    
+    <category term="javascript" scheme="https://wutiaowu5t5.github.io/tags/javascript/"/>
+    
+    <category term="设计模式" scheme="https://wutiaowu5t5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Javascript设计模式 - 《组合模式》</title>
+    <link href="https://wutiaowu5t5.github.io/posts/79a1bf69/"/>
+    <id>https://wutiaowu5t5.github.io/posts/79a1bf69/</id>
+    <published>2024-03-25T07:24:24.000Z</published>
+    <updated>2024-03-25T07:24:24.000Z</updated>
+    
+    
+    
+    
+    <category term="web" scheme="https://wutiaowu5t5.github.io/categories/web/"/>
+    
+    
+    <category term="javascript" scheme="https://wutiaowu5t5.github.io/tags/javascript/"/>
+    
+    <category term="设计模式" scheme="https://wutiaowu5t5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Javascript设计模式 - 《桥接模式》</title>
+    <link href="https://wutiaowu5t5.github.io/posts/2b8aa55b/"/>
+    <id>https://wutiaowu5t5.github.io/posts/2b8aa55b/</id>
+    <published>2024-03-24T07:24:24.000Z</published>
+    <updated>2024-03-24T07:24:24.000Z</updated>
+    
+    
+    
+    
+    <category term="web" scheme="https://wutiaowu5t5.github.io/categories/web/"/>
+    
+    
+    <category term="javascript" scheme="https://wutiaowu5t5.github.io/tags/javascript/"/>
+    
+    <category term="设计模式" scheme="https://wutiaowu5t5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Javascript设计模式 - 《外观模式》</title>
+    <link href="https://wutiaowu5t5.github.io/posts/bd865a4b/"/>
+    <id>https://wutiaowu5t5.github.io/posts/bd865a4b/</id>
+    <published>2024-03-23T07:24:24.000Z</published>
+    <updated>2024-03-23T07:24:24.000Z</updated>
+    
+    
+    
+    
+    <category term="web" scheme="https://wutiaowu5t5.github.io/categories/web/"/>
+    
+    
+    <category term="javascript" scheme="https://wutiaowu5t5.github.io/tags/javascript/"/>
+    
+    <category term="设计模式" scheme="https://wutiaowu5t5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Javascript设计模式 - 《代理模式》</title>
+    <link href="https://wutiaowu5t5.github.io/posts/54233691/"/>
+    <id>https://wutiaowu5t5.github.io/posts/54233691/</id>
+    <published>2024-03-22T07:24:24.000Z</published>
+    <updated>2024-03-22T07:24:24.000Z</updated>
+    
+    
+    
+    
+    <category term="web" scheme="https://wutiaowu5t5.github.io/categories/web/"/>
+    
+    
+    <category term="javascript" scheme="https://wutiaowu5t5.github.io/tags/javascript/"/>
+    
+    <category term="设计模式" scheme="https://wutiaowu5t5.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Javascript设计模式 - 《装饰器模式》</title>
+    <link href="https://wutiaowu5t5.github.io/posts/f51f74c/"/>
+    <id>https://wutiaowu5t5.github.io/posts/f51f74c/</id>
+    <published>2024-03-21T07:24:24.000Z</published>
+    <updated>2024-03-21T07:24:24.000Z</updated>
     
     
     
