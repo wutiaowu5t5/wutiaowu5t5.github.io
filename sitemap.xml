@@ -704,14 +704,14 @@
 
   
   <url>
-    <loc>https://wutiaowu5t5.github.io/tags/Butterfly/</loc>
+    <loc>https://wutiaowu5t5.github.io/tags/git/</loc>
     <lastmod>2024-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://wutiaowu5t5.github.io/tags/git/</loc>
+    <loc>https://wutiaowu5t5.github.io/tags/Butterfly/</loc>
     <lastmod>2024-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -748,13 +748,6 @@
 
   
   <url>
-    <loc>https://wutiaowu5t5.github.io/categories/%E5%BB%BA%E7%AB%99/</loc>
-    <lastmod>2024-04-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://wutiaowu5t5.github.io/categories/web/</loc>
     <lastmod>2024-04-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -762,7 +755,7 @@
   </url>
   
   <url>
-    <loc>https://wutiaowu5t5.github.io/categories/%E9%AD%94%E6%94%B9/</loc>
+    <loc>https://wutiaowu5t5.github.io/categories/%E5%BB%BA%E7%AB%99/</loc>
     <lastmod>2024-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -770,6 +763,13 @@
   
   <url>
     <loc>https://wutiaowu5t5.github.io/categories/work/</loc>
+    <lastmod>2024-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wutiaowu5t5.github.io/categories/%E9%AD%94%E6%94%B9/</loc>
     <lastmod>2024-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
