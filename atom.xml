@@ -390,13 +390,13 @@
     <published>2024-03-26T07:24:24.000Z</published>
     <updated>2024-03-26T07:24:24.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p><br/></p><h2 id="实现条件"><a href="#实现条件" class="headerlink" title="实现条件"></a>实现条件</h2><p><br/></p><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p><br/></p><h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p><br/></p><h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><p><br/></p><h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p><br/></p><h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2>]]></content>
+    <content type="html"><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>享元模式（Flyweight Pattern）是一种结构型设计模式，它旨在通过共享对象来最小化内存使用和提高性能</p><p><br/></p><p>享元模式通常涉及两个核心角色：享元（Flyweight）和享元工厂（Flyweight Factory）</p><ul><li><p><strong>享元（Flyweight）</strong></p><p>表示一个可共享的对象，包含了内部状态和外部状态</p><p>内部状态是对象共享的部分，它存储在享元对象内部，而外部状态是对象特有的部分，它存储在享元对象外部，并在需要时通过参数传递给享元对象</p></li><li><p><strong>享元工厂（Flyweight Factory）</strong></p><p>用于创建和管理享元对象</p><p>享元工厂通常包含一个享元对象的池子（或者缓存），用于存储和复用已创建的享元对象，并在需要时返回给客户端</p></li></ul><p><br/></p><p>享元模式的核心思想是通过共享对象来最小化内存使用和提高性能</p><p>当有多个相似的对象需要创建时，享元模式可以将其中的一部分共享出来，从而节省内存空间</p><p>这种模式的优点在于，可以减少对象的创建数量，提高系统的性能和可扩展性</p><p>享元模式适用于以下情况：</p><ul><li>当需要创建大量相似对象，并且这些对象之间有一些共同的部分时，可以使用享元模式</li><li>当希望减少对象的创建数量，提高系统性能和可扩展性时，享元模式也是一个很好的选择</li></ul><p><br/></p><p>举个简单的例子，考虑一个文本编辑器中的字符对象</p><p>文本编辑器可能需要创建大量的字符对象来表示文本内容，而很多字符对象可能是相同的（如空格、换行符等）</p><p>享元模式可以将其中的一些字符对象共享出来，从而节省内存空间，提高系统性能</p><p><br/></p><h2 id="实现条件"><a href="#实现条件" class="headerlink" title="实现条件"></a>实现条件</h2><p><br/></p><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p><br/></p><h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p><br/></p><h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><p><br/></p><h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p><br/></p><h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2>]]></content>
     
     
       
       
-    <summary type="html">&lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h2&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;h2 id=&quot;实现条件&quot;&gt;&lt;a href=&quot;#实现条件&quot; class=&quot;headerlink&quot; title=&quot;实现条件</summary>
+    <summary type="html">&lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h2&gt;&lt;p&gt;享元模式（Flyweight Pattern）是一种结构型设计模式，它旨在通过共享对象来最小化内存使用和提高性能&lt;/p&gt;
+&lt;p&gt;&lt;br/&gt;&lt;</summary>
       
     
     
