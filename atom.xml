@@ -308,12 +308,12 @@
     <published>2024-03-29T07:24:24.000Z</published>
     <updated>2024-03-29T07:24:24.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><h2 id="实现条件"><a href="#实现条件" class="headerlink" title="实现条件"></a>实现条件</h2><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2>]]></content>
+    <content type="html"><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>策略模式（Strategy Pattern）是一种行为型设计模式，它定义了一系列算法，并将每个算法封装成单独的对象，使它们可以相互替换。策略模式允许算法的变化独立于使用算法的客户端</p><p><br/></p><p>策略模式通常涉及三个核心角色：上下文（Context）、策略接口（Strategy Interface）和具体策略类（Concrete Strategies）</p><ul><li><p><strong>上下文（Context）</strong></p><p>负责维护对策略对象的引用，并在需要时调用策略对象的算法</p><p>上下文通常会将请求委派给策略对象来执行特定的算法。</p></li><li><p><strong>策略接口（Strategy Interface）</strong></p><p>定义了所有具体策略类必须实现的算法接口</p><p>这个接口通常只有一个方法，用于执行具体的算法。</p></li><li><p><strong>具体策略类（Concrete Strategies）</strong></p><p>实现了策略接口，包含了具体的算法实现</p><p>每个具体策略类代表了一个具体的算法，可以根据需求增加或修改</p></li></ul><p><br/></p><p>策略模式的核心思想是将算法封装成独立的对象，并使这些对象可以相互替换，从而使得算法的变化不会影响到使用算法的客户端</p><p>这种模式的优点在于，提高了代码的灵活性和可维护性，使得算法可以在不修改客户端代码的情况下进行替换或者扩展</p><p>策略模式适用于以下情况：</p><ul><li>当一个系统需要支持多种算法，并且这些算法可以相互替换时，可以使用策略模式</li><li>当一个类的行为取决于一些动态变化的条件时，可以考虑使用策略模式</li></ul><p><br/></p><p>举个简单的例子，考虑一个电商系统中的支付功能</p><p>系统可以支持多种支付方式，如支付宝、微信支付、信用卡支付等</p><p>策略模式可以将每种支付方式封装成一个具体的策略类，然后根据用户选择的支付方式来动态地选择并使用相应的支付策略，从而实现支付功能的灵活性和可扩展性</p><p><br/></p><h2 id="实现条件"><a href="#实现条件" class="headerlink" title="实现条件"></a>实现条件</h2><p><br/></p><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p><br/></p><h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p><br/></p><h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><p><br/></p><h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p><br/></p><h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2>]]></content>
     
     
       
       
-    <summary type="html">&lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h2&gt;&lt;h2 id=&quot;实现条件&quot;&gt;&lt;a href=&quot;#实现条件&quot; class=&quot;headerlink&quot; title=&quot;实现条件&quot;&gt;&lt;/a&gt;实现条件&lt;/h</summary>
+    <summary type="html">&lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h2&gt;&lt;p&gt;策略模式（Strategy Pattern）是一种行为型设计模式，它定义了一系列算法，并将每个算法封装成单独的对象，使它们可以相互替换。策略</summary>
       
     
     
