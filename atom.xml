@@ -286,13 +286,12 @@
     <published>2024-03-30T07:24:24.000Z</published>
     <updated>2024-03-30T07:24:24.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p><br/></p><h2 id="实现条件"><a href="#实现条件" class="headerlink" title="实现条件"></a>实现条件</h2><p><br/></p><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p><br/></p><h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p><br/></p><h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><p><br/></p><h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p><br/></p><h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2>]]></content>
+    <content type="html"><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>模板方法模式（Template Method Pattern）是一种行为型设计模式，它定义了一个算法的骨架，并允许子类为一个或多个步骤提供实现</p><p><br/></p><p>模板方法模式通常涉及两个核心角色：模板类（Abstract Class）和具体实现类（Concrete Class）</p><ul><li><p><strong>模板类（Abstract Class）</strong></p><p>定义了一个算法的骨架，其中包含了算法的各个步骤，其中某些步骤可能由子类实现</p></li><li><p><strong>具体实现类（Concrete Class）</strong></p><p>实现了模板类中定义的具体步骤。具体实现类负责实现模板类中定义的抽象方法，从而提供算法的具体实现</p></li></ul><p><br/></p><p>模板方法模式的核心思想是将算法的不变部分封装到模板类中，而将可变部分留给子类来实现</p><p>这种模式的优点在于，可以避免代码的重复，提高代码的复用性，并且可以在不修改模板类的情况下改变算法的某些部分</p><p>模板方法模式适用于以下情况：</p><ul><li>当希望定义一个算法的骨架，并允许子类为其中的某些步骤提供具体实现时，可以使用模板方法模式</li><li>当希望在不修改模板类的情况下改变算法的某些部分时，模板方法模式也是一个很好的选择</li></ul><p><br/></p><p>举个简单的例子，考虑一个制作咖啡和茶的过程</p><p>制作咖啡和茶的过程中都有一些共同的步骤（如煮水、冲泡、加调味品等），而某些步骤可能因为制作的饮料不同而有所不同</p><p>模板方法模式可以将制作饮料的算法抽象成一个模板类，并将其中的共同步骤封装到模板类中，而将可变步骤留给具体的实现类来实现</p><p>这样，就可以通过继承模板类并重写其中的部分方法来实现不同种类饮料的制作过程，而不需要重复编写相同的代码</p><p><br/></p><h2 id="实现条件"><a href="#实现条件" class="headerlink" title="实现条件"></a>实现条件</h2><p><br/></p><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p><br/></p><h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p><br/></p><h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><p><br/></p><h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p><br/></p><h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2>]]></content>
     
     
       
       
-    <summary type="html">&lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h2&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;h2 id=&quot;实现条件&quot;&gt;&lt;a href=&quot;#实现条件&quot; class=&quot;headerlink&quot; title=&quot;实现条件</summary>
+    <summary type="html">&lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h2&gt;&lt;p&gt;模板方法模式（Template Method Pattern）是一种行为型设计模式，它定义了一个算法的骨架，并允许子类为一个或多个步骤提供实</summary>
       
     
     
