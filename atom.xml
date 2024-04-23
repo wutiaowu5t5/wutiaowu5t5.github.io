@@ -100,13 +100,12 @@
     <published>2024-04-07T07:24:24.000Z</published>
     <updated>2024-04-07T07:24:24.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p><br/></p><h2 id="实现条件"><a href="#实现条件" class="headerlink" title="实现条件"></a>实现条件</h2><p><br/></p><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p><br/></p><h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p><br/></p><h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><p><br/></p><h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p><br/></p><h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2>]]></content>
+    <content type="html"><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>解释器模式（Interpreter Pattern）是一种行为型设计模式，它定义了一种语言的文法，并提供了一种解释器来解释该语言中的句子</p><p><br/></p><p>解释器模式通常涉及两个核心角色：解释器（Interpreter）和上下文（Context）</p><ul><li><p><strong>解释器（Interpreter）</strong></p><p>定义了一个抽象的解释操作接口，用于解释文法中的各种句子</p><p>解释器通常会包含多个解释方法，每个方法对应文法中的一个语法规则</p></li><li><p><strong>上下文（Context）</strong></p><p>包含了需要解释的文法内容</p><p>上下文对象通常会包含一些全局信息或者状态，供解释器对象使用</p></li></ul><p><br/></p><p>解释器模式的核心思想是将语言的文法抽象成一个解释器对象，并通过解释器对象来解释文法中的句子</p><p>这种模式的优点在于，可以将语言的解释和实现分离，使得解释过程更加灵活和可扩展</p><p>解释器模式适用于以下情况：</p><ul><li>当需要解释一种语言的文法，并且希望解释过程与实现解释的对象解耦时，可以使用解释器模式</li><li>当希望将解释过程封装到一个对象中，并提供一种统一的接口来解释不同类型的句子时，解释器模式也是一个很好的选择</li></ul><p><br/></p><p>举个简单的例子，考虑一个简单的数学表达式解析器</p><p>解释器模式可以将数学表达式的文法抽象成一个解释器对象，并通过解释器对象来解释和计算表达式的值</p><p>例如，给定一个表达式 “3 + 5 * 2”，解释器模式可以通过解释器对象来解析该表达式，并计算出其结果为 13</p><p><br/></p><h2 id="实现条件"><a href="#实现条件" class="headerlink" title="实现条件"></a>实现条件</h2><p><br/></p><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p><br/></p><h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p><br/></p><h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><p><br/></p><h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p><br/></p><h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2>]]></content>
     
     
       
       
-    <summary type="html">&lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h2&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;h2 id=&quot;实现条件&quot;&gt;&lt;a href=&quot;#实现条件&quot; class=&quot;headerlink&quot; title=&quot;实现条件</summary>
+    <summary type="html">&lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h2&gt;&lt;p&gt;解释器模式（Interpreter Pattern）是一种行为型设计模式，它定义了一种语言的文法，并提供了一种解释器来解释该语言中的句子&lt;/</summary>
       
     
     
@@ -234,13 +233,12 @@
     <published>2024-04-02T07:24:24.000Z</published>
     <updated>2024-04-02T07:24:24.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p><br/></p><h2 id="实现条件"><a href="#实现条件" class="headerlink" title="实现条件"></a>实现条件</h2><p><br/></p><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p><br/></p><h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p><br/></p><h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><p><br/></p><h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p><br/></p><h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2>]]></content>
+    <content type="html"><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>命令模式（Command Pattern）是一种行为型设计模式，它将请求封装成一个对象，从而允许用不同的请求对客户进行参数化，队列或记录请求日志，并支持可撤销的操作</p><p><br/></p><p>命令模式通常涉及四个核心角色：命令（Command）、接收者（Receiver）、调用者（Invoker）和客户端（Client）</p><ul><li><p><strong>命令（Command）</strong></p><p>定义了执行操作的接口</p><p>通常包含一个执行操作的方法，以及可能包含一些其他方法用于支持命令的撤销、重做等操作</p></li><li><p><strong>接收者（Receiver）</strong></p><p>实际执行命令操作的对象</p><p>接收者包含了具体的业务逻辑，负责实现命令接口定义的操作</p></li><li><p><strong>调用者（Invoker）</strong></p><p>负责调用命令对象来执行请求</p><p>调用者通常不直接与接收者交互，而是通过调用命令对象的方法来执行具体的操作</p></li><li><p><strong>客户端（Client）</strong></p><p>创建命令对象，并将命令对象传递给调用者来执行请求</p><p>客户端通常不需要知道命令对象的具体实现，只需要知道如何创建命令对象，并将其传递给调用者即可</p></li></ul><p><br/></p><p>命令模式的核心思想是将请求封装成一个对象，使得请求的发送者和接收者之间解耦，从而可以灵活地添加、修改和重用命令对象，同时也提供了一种统一的方式来处理请求的执行、撤销和重做等操作</p><p>命令模式适用于以下情况：</p><ul><li>当需要将请求的发送者和接收者之间解耦，并且希望在不同的请求之间进行参数化时，可以使用命令模式</li><li>当希望支持命令的撤销、重做等操作，并且希望将这些操作封装到命令对象中时，命令模式也是一个很好的选择</li></ul><p><br/></p><p>举个简单的例子，考虑一个遥控器系统</p><p>遥控器可以控制不同的家电设备（如电视、音响等），而命令模式可以将每个控制命令（如打开、关闭、调高音量等）封装成一个命令对象，并将命令对象传递给遥控器来执行具体的控制操作</p><p>这样，可以实现遥控器与家电设备之间的解耦，同时也提供了一种统一的方式来处理控制命令的执行、撤销和重做等操作</p><p><br/></p><h2 id="实现条件"><a href="#实现条件" class="headerlink" title="实现条件"></a>实现条件</h2><p><br/></p><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p><br/></p><h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p><br/></p><h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><p><br/></p><h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p><br/></p><h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2>]]></content>
     
     
       
       
-    <summary type="html">&lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h2&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;h2 id=&quot;实现条件&quot;&gt;&lt;a href=&quot;#实现条件&quot; class=&quot;headerlink&quot; title=&quot;实现条件</summary>
+    <summary type="html">&lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h2&gt;&lt;p&gt;命令模式（Command Pattern）是一种行为型设计模式，它将请求封装成一个对象，从而允许用不同的请求对客户进行参数化，队列或记录请求</summary>
       
     
     
