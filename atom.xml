@@ -179,13 +179,13 @@
     <published>2024-04-04T07:24:24.000Z</published>
     <updated>2024-04-04T07:24:24.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p><br/></p><h2 id="实现条件"><a href="#实现条件" class="headerlink" title="实现条件"></a>实现条件</h2><p><br/></p><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p><br/></p><h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p><br/></p><h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><p><br/></p><h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p><br/></p><h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2>]]></content>
+    <content type="html"><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>状态模式（State Pattern）是一种行为型设计模式，它允许对象在内部状态发生变化时改变其行为，使得对象看起来好像修改了其类</p><p><br/></p><p>状态模式通常涉及三个核心角色：上下文（Context）、状态（State）和具体状态（Concrete State）</p><ul><li><p><strong>上下文（Context）</strong></p><p>维护一个当前状态对象，并将状态相关的操作委托给当前状态对象处理</p><p>上下文对象通常会包含一个状态对象的引用，并提供方法来切换当前状态和执行状态相关的操作</p></li><li><p><strong>状态（State）</strong></p><p>定义了一个接口用于封装与上下文相关的行为</p><p>状态对象通常会包含多个方法，用于处理上下文对象的请求，并可能会改变上下文对象的状态</p></li><li><p><strong>具体状态（Concrete State）</strong></p><p>实现了状态接口，并负责实现具体的状态行为</p><p>具体状态对象通常会包含状态相关的业务逻辑，并根据需要改变上下文对象的状态</p></li></ul><p><br/></p><p>状态模式的核心思想是将对象的状态和行为进行分离，使得状态的改变不会影响对象的行为，从而实现对象的灵活性和可扩展性</p><p>这种模式的优点在于，可以将状态的转换和状态的行为封装到不同的状态对象中，使得状态之间的转换更加灵活和可扩展</p><p>状态模式适用于以下情况：</p><ul><li>当对象的行为取决于其状态，并且状态可能在运行时发生变化时，可以使用状态模式</li><li>当希望将状态的转换和状态的行为封装到不同的状态对象中，并且希望通过配置来动态地改变对象的行为时，状态模式也是一个很好的选择</li></ul><p><br/></p><p>举个简单的例子，考虑一个自动售货机系统</p><p>自动售货机的行为可能会根据不同的状态（如有货、缺货、正在出货等）而发生变化，而状态模式可以将每种状态抽象成一个状态对象，并根据当前状态来执行相应的行为</p><p>例如，当自动售货机处于有货状态时，可以执行出售商品的行为；当自动售货机处于缺货状态时，可以执行补货的行为</p><p>这样，可以通过改变状态对象来动态地改变自动售货机的行为，而不需要修改自动售货机的代码</p><p><br/></p><h2 id="实现条件"><a href="#实现条件" class="headerlink" title="实现条件"></a>实现条件</h2><p><br/></p><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p><br/></p><h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p><br/></p><h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><p><br/></p><h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p><br/></p><h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2>]]></content>
     
     
       
       
-    <summary type="html">&lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h2&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;h2 id=&quot;实现条件&quot;&gt;&lt;a href=&quot;#实现条件&quot; class=&quot;headerlink&quot; title=&quot;实现条件</summary>
+    <summary type="html">&lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h2&gt;&lt;p&gt;状态模式（State Pattern）是一种行为型设计模式，它允许对象在内部状态发生变化时改变其行为，使得对象看起来好像修改了其类&lt;/p&gt;
+</summary>
       
     
     
