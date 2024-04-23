@@ -415,13 +415,13 @@
     <published>2024-03-25T07:24:24.000Z</published>
     <updated>2024-03-25T07:24:24.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p><br/></p><h2 id="实现条件"><a href="#实现条件" class="headerlink" title="实现条件"></a>实现条件</h2><p><br/></p><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p><br/></p><h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p><br/></p><h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><p><br/></p><h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p><br/></p><h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2>]]></content>
+    <content type="html"><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>组合模式（Composite Pattern）是一种结构型设计模式，它允许将对象组合成树形结构以表示部分-整体的层次结构</p><p>组合模式使得客户端可以统一地处理单个对象和对象集合</p><p><br/></p><p>组合模式通常涉及两个核心角色：组件（Component）和叶子节点（Leaf）</p><ul><li><p><strong>组件（Component）</strong></p><p>定义了组合中所有对象共有的接口和行为，并提供了管理子组件的方法</p><p>组件可以是抽象类或接口，它可以是叶子节点或容器节点</p></li><li><p><strong>叶子节点（Leaf）</strong></p><p>表示组合中的叶子对象，它没有子组件</p><p>叶子节点通常是组合的最小单元，它实现了组件接口的具体行为</p></li></ul><p><br/></p><p>组合模式的核心思想是将对象组合成树形结构，并且统一对待单个对象和对象集合</p><p>这种模式的优点在于，可以简化客户端和对象之间的交互，客户端不需要区分单个对象和对象集合，而是统一地对待它们</p><p>同时，组合模式也提供了一种灵活的方式来组织和管理对象的层次结构</p><p>组合模式适用于以下情况：</p><ul><li>当希望将对象组合成树形结构，并且统一对待单个对象和对象集合时，可以使用组合模式</li><li>当希望客户端可以统一地处理单个对象和对象集合时，组合模式也是一个很好的选择</li></ul><p><br/></p><p>举个简单的例子，考虑一个文件系统中的目录和文件对象</p><p>目录可以包含其他目录和文件对象，而文件是组合中的叶子节点</p><p>组合模式可以将目录和文件抽象成组件对象，并将它们组合成树形结构</p><p>这样，可以通过统一的方式来处理目录和文件对象，而不需要区分它们的类型</p><p><br/></p><h2 id="实现条件"><a href="#实现条件" class="headerlink" title="实现条件"></a>实现条件</h2><p><br/></p><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p><br/></p><h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p><br/></p><h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><p><br/></p><h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p><br/></p><h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2>]]></content>
     
     
       
       
-    <summary type="html">&lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h2&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;h2 id=&quot;实现条件&quot;&gt;&lt;a href=&quot;#实现条件&quot; class=&quot;headerlink&quot; title=&quot;实现条件</summary>
+    <summary type="html">&lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h2&gt;&lt;p&gt;组合模式（Composite Pattern）是一种结构型设计模式，它允许将对象组合成树形结构以表示部分-整体的层次结构&lt;/p&gt;
+&lt;p&gt;组合</summary>
       
     
     
