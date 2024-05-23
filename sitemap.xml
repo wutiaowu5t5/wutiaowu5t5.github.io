@@ -578,15 +578,6 @@
   </url>
   
   <url>
-    <loc>https://wutiaowu5t5.github.io/posts/2b323cc0/</loc>
-    
-    <lastmod>2024-01-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://wutiaowu5t5.github.io/posts/4d830755/</loc>
     
     <lastmod>2024-01-17</lastmod>
@@ -774,6 +765,13 @@
   </url>
   
   <url>
+    <loc>https://wutiaowu5t5.github.io/tags/git/</loc>
+    <lastmod>2024-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://wutiaowu5t5.github.io/tags/javascript/</loc>
     <lastmod>2024-05-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -788,7 +786,7 @@
   </url>
   
   <url>
-    <loc>https://wutiaowu5t5.github.io/tags/git/</loc>
+    <loc>https://wutiaowu5t5.github.io/tags/3D/</loc>
     <lastmod>2024-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -796,13 +794,6 @@
   
   <url>
     <loc>https://wutiaowu5t5.github.io/tags/%E5%B7%A5%E7%A8%8B%E5%8C%96/</loc>
-    <lastmod>2024-05-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://wutiaowu5t5.github.io/tags/3D/</loc>
     <lastmod>2024-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
